@@ -1,4 +1,4 @@
-package com.ariat.Tests.CreditCard.Countries.DeleteCreditCard;
+package com.ariat.Tests.CreditCard.Countries.AddCreditCard;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -10,7 +10,6 @@ import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
-import com.ariat.Pages.Main.AddACreditCardPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
@@ -18,19 +17,18 @@ import com.ariat.Pages.Header.SignInPage;
 
 
 /**
- * Tests for add & deletet credit card United Kingdom
+ * Tests for delete credit card United Kingdom
  * @author aila.bogasieru@ariat.com
  *
  */
 
 
-public class Add_DeleteCreditCardUKTest extends BaseTest{
+public class DeleteCreditCardUKTest extends BaseTest{
 	
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
-	private AddACreditCardPage addACreditCardPage;
 	private PaymentInformationPage paymentInfoPage;
 	private Environments environment;
 	private EUCountries euCountry;
@@ -38,10 +36,6 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 	
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
-	private static final String CARD_ID = "MASTER_ID123";
-	private static final String CARD_OWNER = "Aila B";
-	private static final String YEAR = "2023";
-	private static final String MONTH = "December";
 	
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
@@ -52,38 +46,27 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 	}
 
 	@Test
-	public void add_deleteCreditCardUKTest() {
-		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & delete it Denmark test");
+	public void deleteCreditCardFromPaymentInfoUKTest() {
+		logger.info("Starting delete credit card from Payment Info UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningCustomer(EMAIL,"EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
-		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.enterCardId(CARD_ID);
-		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD1.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD1.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD1.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
-		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
-		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
-		logger.info("Finishing add credit card & delete it Denmark test");
-  } 
-	
+		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
+	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
+	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
+		logger.info("Finishing delete credit card from Payment info UK test");
+		
+  }
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();
-		addACreditCardPage.quit();
 		paymentInfoPage.quit();
 		myAccountPage.quit();
-	
 	}
 }

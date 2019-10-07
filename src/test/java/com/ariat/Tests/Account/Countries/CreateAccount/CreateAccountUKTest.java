@@ -124,6 +124,5 @@ public class CreateAccountUKTest extends BaseTest {
 		signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();
-		orderDetailsPage.quit();
 	}
 }
