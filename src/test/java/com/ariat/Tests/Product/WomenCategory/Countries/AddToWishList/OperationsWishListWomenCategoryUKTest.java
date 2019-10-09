@@ -1,6 +1,7 @@
 package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -18,6 +19,7 @@ import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessor
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category -> Add to wishlist update, edit, set
@@ -137,10 +139,15 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		glovesProductPage.selectAttributeSize("6.5");
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");
-		
 	}
-
+	
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

@@ -2,6 +2,7 @@ package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -20,6 +21,7 @@ import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category -> Add to Wishlist test
@@ -148,8 +150,14 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		myAccountWishListPage.findWishListClick();
 		logger.info("Finishing product page -> Women Category find someone's WishList test.");
 	}
-		
+	
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

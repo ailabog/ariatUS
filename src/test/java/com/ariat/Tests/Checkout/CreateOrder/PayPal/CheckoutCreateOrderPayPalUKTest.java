@@ -1,6 +1,7 @@
 package com.ariat.Tests.Checkout.CreateOrder.PayPal;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -19,6 +20,7 @@ import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -123,6 +125,12 @@ public class CheckoutCreateOrderPayPalUKTest extends BaseTest {
 	}
 	
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

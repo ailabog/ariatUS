@@ -1,6 +1,7 @@
 package com.ariat.Tests.Categories.Countries.MenCategory.Sorting;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -55,7 +57,13 @@ public class MenCategoryPaginationSortingUKTest extends BaseTest {
 		menCategoryPage.prevPaginationButtonUp();
 		logger.info("Finishing  sort and navigate pagination test.");
 	}
-		
+	
+	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
 	@AfterTest
 	public void tearDown() {
 		homePage.quit();

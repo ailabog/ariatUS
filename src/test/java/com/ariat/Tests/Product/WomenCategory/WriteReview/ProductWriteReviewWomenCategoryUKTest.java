@@ -1,6 +1,7 @@
 package com.ariat.Tests.Product.WomenCategory.WriteReview;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -16,6 +17,7 @@ import com.ariat.Pages.Products.BreechProductPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category test write review on Glove product
@@ -85,8 +87,14 @@ public class ProductWriteReviewWomenCategoryUKTest extends BaseTest {
 		breechProductPage.postReview();
 		logger.info("Finishing product page -> Women Category don't recommend product for Breech product test.");
 	}
+    
+    @AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 
-	@AfterTest
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

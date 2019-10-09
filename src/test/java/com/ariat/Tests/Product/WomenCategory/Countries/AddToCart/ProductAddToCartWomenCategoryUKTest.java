@@ -1,6 +1,7 @@
 package com.ariat.Tests.Product.WomenCategory.Countries.AddToCart;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -14,6 +15,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Product page - > Women Category -> Add to cart test
@@ -57,9 +59,14 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
+    
+    @AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 
-	
-	@AfterTest
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

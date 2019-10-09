@@ -2,6 +2,7 @@ package com.ariat.Tests.Account.Countries.CreateAccount;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,6 +16,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test create account by instantiating the browser, go to Home page, and calls
@@ -116,8 +118,13 @@ public class CreateAccountUKTest extends BaseTest {
 		logger.info("Finishing forgot password test...");
 	}
 	
-
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

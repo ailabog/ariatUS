@@ -2,6 +2,7 @@ package com.ariat.Tests.HeaderAndFooter.Countries;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -10,6 +11,7 @@ import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test Home Page instantiates the browser and access the ariat environment and
@@ -52,8 +54,14 @@ public class HeaderAndFooterUKTest extends BaseTest{
 		homePageUK.checkElementsFooter();
 		logger.info("Finishing the check for Footer UK elements:");
 	}
-
+	
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

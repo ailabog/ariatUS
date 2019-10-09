@@ -2,6 +2,8 @@ package com.ariat.Tests.Orders_View;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
@@ -11,6 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test order status from different type of navigation
@@ -54,8 +57,14 @@ public class OrderStatusUKTest extends BaseTest {
 		myOrdersPage = myAccountPage.returnMyOrdersPageOrderStatusMiddleNav();
 		logger.info("Finishing order status test...");
 	}
+	
+	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 
-	@AfterMethod
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

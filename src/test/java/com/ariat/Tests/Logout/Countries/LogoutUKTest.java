@@ -2,6 +2,8 @@ package com.ariat.Tests.Logout.Countries;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -11,6 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -66,8 +69,14 @@ public class LogoutUKTest extends BaseTest {
 		myAccountPage.logoutTop("English");
 		logger.info("I was succesfully logged out from the application!");
 	}
+	
+	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 
-	@AfterMethod
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

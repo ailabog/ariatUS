@@ -1,6 +1,7 @@
 package com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -11,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -136,8 +138,14 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		myAccountPage.logoutMiddle();
 		logger.info("Finishing wish list UK test...");
 	} 
-
+	
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

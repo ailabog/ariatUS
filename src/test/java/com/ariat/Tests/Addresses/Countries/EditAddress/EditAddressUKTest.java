@@ -1,6 +1,7 @@
 package com.ariat.Tests.Addresses.Countries.EditAddress;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,6 +16,7 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Utils.GenerateRandomDataUtils;
+import com.ariat.Utils.KillChrome;
 
 
 /**
@@ -70,6 +72,12 @@ public class EditAddressUKTest extends BaseTest {
 	}
 	
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

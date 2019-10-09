@@ -1,6 +1,7 @@
 package com.ariat.Tests.CreditCard.Countries.AddCreditCard;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Header.SignInPage;
 
 
@@ -61,7 +63,14 @@ public class DeleteCreditCardUKTest extends BaseTest{
 		logger.info("Finishing delete credit card from Payment info UK test");
 		
   }
+	
 	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
 	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();

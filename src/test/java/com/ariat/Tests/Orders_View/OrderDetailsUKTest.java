@@ -1,6 +1,8 @@
 package com.ariat.Tests.Orders_View;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
@@ -11,6 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.KillChrome;
 
 /**
  * Test Order details from different type of navigation and checks values from
@@ -85,4 +88,19 @@ public class OrderDetailsUKTest extends BaseTest {
 		myOrdersPage = myAccountPage.returnMyOrdersPageTopNav();
 		logger.info("Finishing orders check information orders test.");
 	}
+	
+	@AfterTest
+	public void clearBrowserSession() {
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
+
+	@AfterSuite
+	public void tearDown() {
+	homePage.quit();
+	homePageUK.quit();
+	signInPage.quit();
+	myAccountPage.quit();
+	orderDetailsPage.quit();
+   }
 }

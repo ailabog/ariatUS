@@ -135,6 +135,13 @@
                       <include name="myAccountAccessWishListUKTest" />
                    </methods>
               </class>
+             <class name ="com.ariat.Tests.Base.KillChromeTests" > 
+            
+              <methods>
+                      <include name="killChrome" />
+               </methods>
+               </class>
+                  
               <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUKTest" >
                   <methods>
                       <include name="myAccountAccessPersonalInfoUKTest" />
@@ -221,14 +228,9 @@
                       <include name="checkoutCreateNewOrderNotBeingLoggedVisa" />
                  </methods>   
              
-        
                    </class>
-                   <class name ="com.ariat.Tests.Base.KillChromeTests" > 
-            
-              <methods>
-                      <include name="killChrome" />
-               </methods>
-               </class>
+   
+                  
         </classes>
      </test>
 </suite>
