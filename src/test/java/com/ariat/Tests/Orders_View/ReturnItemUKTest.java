@@ -12,6 +12,7 @@ import com.ariat.Pages.VerifyReturnItemsPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
+import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyOrdersPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
@@ -30,6 +31,7 @@ public class ReturnItemUKTest extends BaseTest {
 	private EUCountries euCountry;
 	private HomePage homePage;
 	private HomePageUK homePageUK;
+	private HomePageUS homePageUS;
 	private SignInPage signInPage;
 	private OrderDetailsPage orderDetailsPage;
 	private ReturnItemsPage returnItemsPage;
@@ -60,7 +62,8 @@ public class ReturnItemUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
 		signInPage.checkOrder(ORDER_NO, EMAIL, BILLING_ZIP_CODE);
 		orderDetailsPage = signInPage.returnOrderDetailsPage();
 		returnItemsPage = orderDetailsPage.returnReturnItemsPage();
@@ -84,7 +87,8 @@ public class ReturnItemUKTest extends BaseTest {
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
+		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
+		signInPage = homePageUS.returnSignInPage();
 		signInPage.returningCustomer(EMAIL, "EnglishUK");
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();

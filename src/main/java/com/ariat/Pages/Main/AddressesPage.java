@@ -22,7 +22,7 @@ public class AddressesPage extends BasePage {
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
 	private By addressesText = By.xpath("//h1[text()='Addresses']");
 	private By addressTextDE = By.xpath("//h1[text()='Adressen']");
-	private By editLink = By.xpath("//a[@class='address-action address-action--edit']");
+	private By editLink = By.xpath("//a[contains(text(),'Edit')]");
 		
 	private By deleteLink = By.xpath("//a[@title='Delete']");
 	private By deleteLinkDE = By.xpath("//a[@title='Löschen']");
