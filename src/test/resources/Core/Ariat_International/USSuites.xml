@@ -4,72 +4,59 @@
 <parameter name="environment" value="${environment}" />
 	<test name="USSuites" parallel="none" preserve-order="true">
        <classes>
-                <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
-             
-              <class name="com.ariat.Tests.Addresses.Countries.AddAddress.AddAddressUSTest" />
+               <class name="com.ariat.Tests.Account.Countries.CreateAccount.CreateAccountUSTest" />
+                                    
+               <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUSTest" />
+                     
+               <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressUSTest" />
+                          
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+                                     
+               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.Add_DeleteCreditCardUSTest" />
+                         
+               <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
+                           
+               <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUSTest" />
               
-              <class name="com.ariat.Tests.Addresses.Countries.DeleteAddress.DeleteAddressUSTest" />
-             
-              <class name="com.ariat.Tests.Addresses.Countries.EditAddress.EditAddressUSTest" />
-            
-              <class name="com.ariat.Tests.Addresses.Countries.LoadMoreAddresses.LoadMoreAddressUSTest" />
-              
-              <class name="com.ariat.Tests.Addresses.Countries.MakeDefaultAddress.MakeDefaultAddressUSTest" />
-            
-              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.Add_DeleteCreditCardUSTest" />
-              
-              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.AddCreditCardUSTest" />
-            
-              <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.DeleteCreditCardUSTest" />
-           
-              <class name="com.ariat.Tests.CreditCard.Countries.MakeDefaultCreditCard.MakeDefaultCreditCardUSTest" />
-             
-              <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
-             
-              <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUSTest" />
-              
-              <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingUSTest" />
-           
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.Sorting.WomenCategoryPaginationSortingUSTest" />
-            
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUSTest" />
-            
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUSTest" />
-           
-              <class name="com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav.MenCategoriesAndSubcategoriesTopNavUSTest" />
-             
-              <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
-              
-      
-              <class name="com.ariat.Tests.MyAccount.Countries.TopRightNav.MyAccountTopRightNavigationUSTest" />
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+                           
+               <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingUSTest" />
           
-             <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
-                              
-              <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUSTest" />
-              
-              <class name="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
-              
-              <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUSTest" />
-             
-              <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUSTest" />
-                   
-              <class name="com.ariat.Tests.Orders_View.OrderDetailsUSTest" />
-              
-              <class name="com.ariat.Tests.Orders_View.OrderStatusUSTest" />
+               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUSTest" />
             
-             <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryUSTest" />
+               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUSTest" />
+           
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+                        
+               <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
+                
+               <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUSTest" />
               
-               
-              <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUSTest" />
+               <class name="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
+              
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+              
+               <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUSTest" />
              
-              <class name="com.ariat.Tests.Product.WomenCategory.WriteReview.ProductWriteReviewWomenCategoryUSTest" />
-             
-              <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUSTest" />
+               <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUSTest" />
+                                            
+               <class name="com.ariat.Tests.Orders_View.OrderDetailsUSTest" />
+              
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+              
+               <class name="com.ariat.Tests.Orders_View.OrderStatusUSTest" />
             
-              <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUSTest" />
+               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.ProductAddToWishListWomenCategoryUSTest" />
               
-                                  
-              <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest" />
+               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList.OperationsWishListWomenCategoryUSTest" />
+                
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+            
+               <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUSTest" />
+                                                 
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest" />
+              
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
                  
                   
         </classes>
