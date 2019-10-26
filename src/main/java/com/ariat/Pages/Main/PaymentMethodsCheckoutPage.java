@@ -71,7 +71,11 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By paypalBtn = By.id("paypal-animation-content");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");
-
+	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
+	private By selectState = By.xpath("//span[text()='Arizona']");
+	
+	//private By addressOption = By.xpath("li[@name='savedAddress']");
+	
 	protected PaymentMethodsCheckoutPage(WebDriver driver) {
 		super(driver);
 	}
@@ -366,6 +370,8 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, useAddressAsItIsBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
+	
+	
 
 	public void scroll1500DownSecurittCode() {
 		WebDriverUtils.scroll1500Down(driver, securityCode);
@@ -397,6 +403,14 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	public void gotoPayPal() {
 		logger.info("Going to PayPal..");
 		WebDriverUtils.clickOnElementWithWait(driver, paypalBtn);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectState() {
+		logger.info("Selecting state..");
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, selectState);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 }

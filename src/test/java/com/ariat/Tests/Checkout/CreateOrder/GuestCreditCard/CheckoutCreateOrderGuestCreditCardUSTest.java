@@ -95,7 +95,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	} 
 	
 	
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedVisa() {
 		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -163,7 +163,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	public void clearBrowserSession() {
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+    }*/
 
 	@AfterSuite
 	public void tearDown() {

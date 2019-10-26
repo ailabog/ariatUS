@@ -40,7 +40,7 @@ public class ReturnItemUKTest extends BaseTest {
 	private com.ariat.Pages.Main.MyAccountPage myAccountPage;
 	private MyOrdersPage myOrdersPage;
 
-	public static final String EMAIL = "aila.bogasieru@ariat.com";
+	public static final String EMAIL = "aila.bogasieru@yahoo.com";
 	public static final String PASSWORD = "Parola12345!";
 	public static final String ORDER_NO = "10003202";
 	public static final String BILLING_ZIP_CODE = "41641";

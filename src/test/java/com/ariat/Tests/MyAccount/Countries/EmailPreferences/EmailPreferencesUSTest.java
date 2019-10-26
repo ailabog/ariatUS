@@ -37,7 +37,7 @@ public class EmailPreferencesUSTest extends BaseTest {
 	private EmailPreferencePage emailPreferencesPage;
 	
 
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
+	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";

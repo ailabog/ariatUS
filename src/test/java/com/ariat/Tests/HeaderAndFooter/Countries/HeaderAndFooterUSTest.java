@@ -38,7 +38,7 @@ public class HeaderAndFooterUSTest extends BaseTest{
 	}
 
 	@Test(priority=0)
-	public void UKHeader() {
+	public void USHeader() {
 		logger.info("Starting the check for Header US elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -49,7 +49,7 @@ public class HeaderAndFooterUSTest extends BaseTest{
 	}
 	
 	@Test(priority=1)
-	public void UKFooter() {
+	public void USFooter() {
 		logger.info("Starting the check for Footer US elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

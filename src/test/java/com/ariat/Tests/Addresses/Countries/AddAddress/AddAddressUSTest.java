@@ -43,8 +43,8 @@ public class AddAddressUSTest extends BaseTest {
 
 	public static final String ADDRESS = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String CITY = GenerateRandomDataUtils.generateRandomString(5);
-	public static final String POST_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
-	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
+	public static final String POST_CODE = "90201";
+	public static final String ADDRESS_ID = "5th";
 	private static final String EMAIL = "aila.bogasieru@yahoo.com";
 	private static final String PASSWORD = "Parola12345!";
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
@@ -67,9 +67,9 @@ public class AddAddressUSTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
-		addAddressPage.enterFName("A");
-		addAddressPage.enterLName("B");
-		addAddressPage.enterAddress1("Avenue, 5th");
+		addAddressPage.enterFName("69");
+		addAddressPage.enterLName("5th");
+		addAddressPage.enterAddress1("Avenue");
 		addAddressPage.enterCity(CITY);
 		addAddressPage.selectState("New York");
 		addAddressPage.enterPostCode(POST_CODE);

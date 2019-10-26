@@ -19,15 +19,8 @@
                <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUSTest" />
               
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
-                           
-               <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingUSTest" />
-          
-               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUSTest" />
             
-               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUSTest" />
-           
-               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
-                        
+                                  
                <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
                 
                <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUSTest" />

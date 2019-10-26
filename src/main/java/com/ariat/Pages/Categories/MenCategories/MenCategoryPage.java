@@ -87,6 +87,7 @@ public class MenCategoryPage extends BasePage{
 	private By priceHighToLowLink = By.linkText("Price (High to Low)");
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
+	private By bestSellersLinkUS = By.linkText("Best Seller");
 	private By bestSellersLinkFR = By.linkText("Meilleurs Ventes");
 	
 
@@ -134,7 +135,11 @@ public class MenCategoryPage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
-	
+		
+	public void sortProductWomenCategoryBestSellersUS() {
+		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLinkUS);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+	}
 	
 	public void sortProductWomenCategoryBestSellersFR() {
 		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLinkFR);

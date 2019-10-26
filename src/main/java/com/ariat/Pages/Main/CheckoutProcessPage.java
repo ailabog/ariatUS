@@ -62,6 +62,8 @@ public class CheckoutProcessPage extends BasePage {
 	private By confirmPayPal = By.id("confirmButtonTop");
 	private By nextBtnPayPal = By.id("btnNext");
 	private By loginPayPal = By.id("btnLogin");
+	private By arrowSelectAddress = By.cssSelector(".el-icon-arrow-up");
+	private By addressOption = By.xpath("//li//span[text()='5th - Avenue']");
 
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
@@ -115,6 +117,13 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, selectState);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
+	
+	public void selectAddressUS() {
+		WebDriverUtils.clickOnElementWithWait(driver, arrowSelectAddress);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, addressOption);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 
 	public void enterFName(String nameValue) {

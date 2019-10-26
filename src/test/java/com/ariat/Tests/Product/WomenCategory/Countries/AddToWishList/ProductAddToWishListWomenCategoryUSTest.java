@@ -63,7 +63,7 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 	
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
+	public static final String EMAIL_WISHLIST = "aila.bogasieru@yahoo.com";
 	
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
 	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;

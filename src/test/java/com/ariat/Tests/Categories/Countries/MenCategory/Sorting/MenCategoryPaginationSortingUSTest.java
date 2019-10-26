@@ -50,7 +50,7 @@ public class MenCategoryPaginationSortingUSTest extends BaseTest {
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryRecommended();
 		menCategoryPage.clickSortUp();
-		menCategoryPage.sortProductWomenCategoryBestSellers();
+		menCategoryPage.sortProductWomenCategoryBestSellersUS();
 		menCategoryPage.clickSortUp();
 		menCategoryPage.sortProductWomenCategoryPriceHighToLow();
 		menCategoryPage.show72ItemsUp();
