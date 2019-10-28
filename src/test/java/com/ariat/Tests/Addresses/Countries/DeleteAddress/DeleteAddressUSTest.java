@@ -53,6 +53,7 @@ public class DeleteAddressUSTest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
+	
 	@Test(priority = 0)
 	public void deleteAddressTestUS() {
 		logger.info("Starting deleting address US test");

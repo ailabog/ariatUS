@@ -57,22 +57,7 @@ public class LogoutUSTest extends BaseTest {
 		myAccountPage.logoutMiddle();
 		logger.info("I was succesfully logged out from the application!");
 	}
-	
-	@Test
-	public void logoutFromMyAccountTopTestUS() {
-		logger.info("Starting the logout US test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		myAccountPage.logoutTop("English");
-		logger.info("I was succesfully logged out from the application!");
-	}
-	
+
 	@AfterTest
 	public void clearBrowserSession() {
 		KillChrome kill = new KillChrome();
