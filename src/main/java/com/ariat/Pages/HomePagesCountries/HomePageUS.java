@@ -57,7 +57,6 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 			.xpath("//*[@id=\"ar-footer-wrapper\"]/div[1]/div[1]/div/div[2]/div[2]/div/div/p/a[3]/span");
 	private By instagramIcon = By
 			.xpath("//*[@id=\"ar-footer-wrapper\"]/div[1]/div[1]/div/div[2]/div[2]/div/div/p/a[4]/span");
-
 	private By orderStatusFooter = By.linkText("Order Status");
 	private By returnsFooter = By.linkText("Returns");
 	private By trackYourOrderFooter = By.linkText("Track Your Order");
@@ -84,13 +83,11 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 	private By partnersFeiFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[1]/a/span");
 	private By partnersEquestrianFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[2]/a/span");
 	private By partnersRodeoFooter = By.xpath("//*[@id=\"footer-accordion\"]/ul[5]/li[3]/a/span");
-
 	private By search = By.xpath("//*[@id=\"header-main-content\"]/div/div[5]/div/div[1]/span[2]");
 	private By searchTextBox = By.xpath("//input[@placeholder='Search for Products']");
 	private By textMsgProduct = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[1]");
 	private By seeAllproductsLink = By.xpath("//*[@id=\"search-suggestions-results\"]/div/div[1]/div[2]/a");
 	private By closeSearch = By.xpath("//*[@id=\"header-main-content\"]/div/div[6]/div[2]/form/div/div[1]/span/span");
-
 	private By returningCustomerText = By.xpath("//*[congtains(text()='Returning customer']");
 	private By checkOrderText = By.xpath("//*contains[text()='Check an order / request return']");
 	private By newcustomerText = By.xpath("//*contains[text()='New Customer']");
@@ -102,15 +99,10 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 	private By womenFootwearCasualShoesCategory = By.xpath("//a[text()='Casual Shoes']");
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By accessoriesCategory = By.xpath("//a[text()=' Accessories']");
-
 	private By topsAndTshirtsCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
 	private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-
-	//private By garmentBagProduct = By.xpath("//img[contains(@title, 'Ariat Team Garment Bag')]");
 	private By garmentBagProduct = By.cssSelector("#ce3268bb64290376d227adfa41 .psd-4-full-width-video-module-1__image");
-	//css=#ce3268bb64290376d227adfa41 .psd-4-full-width-video-module-1__image 
-	//xpath=//img[@alt='Ariat Team Garment Bag']
 	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
 
 	public HomePageUS(WebDriver driver) {

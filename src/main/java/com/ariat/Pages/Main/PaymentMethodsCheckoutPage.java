@@ -20,9 +20,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By optionCardVisa = By.xpath("//span[text()='Visa']");
 	private By optionCardAmericanExpress = By.xpath("//span[text()='American Express']");
 	private By expirationDateMonth = By.xpath("//span[text()='June']");
-	private By expirationDateMonthFR = By.xpath("//span[text()='Janvier']");
-	private By expirationDateMonthDE = By.xpath("//span[contains(text(),'Februar')]");
-	private By expirationDateMonthUS = By.cssSelector(".el-form > .el-form-item:nth-child(6) .el-select__caret");
+    private By expirationDateMonthUS = By.cssSelector(".el-form > .el-form-item:nth-child(6) .el-select__caret");
 	private By monthExpirationUS = By.xpath("//span[text()='June']");
 	private By expirationDateYear = By.xpath("//span[text()='2024']");
 	private By yearExpirationUS = By.xpath("//span[text()='2025']");
@@ -31,50 +29,29 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By applyGifCard = By.xpath("//button//span[text()='Apply']");
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
-	private By emailTxtBoxPayPal = By.id("email");
-	private By passwordTxtBoxPaypal = By.xpath("//div[@id='main']//input[@id='password']");
-	private By loginPayPal = By.id("btnLogin");
-	private By continueBtnPayPal = By.xpath("//button[text()='Continue']");
-	private By confirmPayPal = By.id("confirmButtonTop");
 	private By nameText = By.cssSelector(".checkout__card-name .el-input__inner");
 	private By cardNo = By.cssSelector(".checkout__card-number .el-input__inner");
 	private By cardNoUS = By.xpath("//input[@id='c-cardnumber']");
-	//private By klarnaBtn = By.xpath(
-	//		"//label[@class='el-radio is-checked payment-method-radio payment-method__KLARNA']//span[text()='Klarna']");
-	//private By sofortBtn = By.xpath("//label//span[text()='Sofort']");
-	//xpath=//section[@id='app']/main/div/div/form[2]/div/div[2]/div[3]/label/span[2]
-	//xpath=//span[contains(.,'Sofort')]
 	private By klarnaBtn = By.cssSelector(".payment-method__KLARNA > .el-radio__label");
 	private By sofortBtn = By.cssSelector(".payment-method__SOFORT > .el-radio__label");
-	//private By sofortBtn = By.xpath("//span[contains(text(),'Sofort')]");
 	private By giropayBtn = By.cssSelector(".payment-method__GIROPAY > .el-radio__label");
-	//private By idealBtn = By.xpath(".payment-method__IDEAL > .el-radio__label");
-	
 	private By payPalBtn = By.xpath("//span[text()='Paypal']");
 	private By creditCardBtn = By
 			.xpath("//label[@class='el-radio is-checked payment-method-radio payment-method__SA_SILENTPOST']");
 	private By reviewOrderBtn = By.id("paymentbtncs");
 	private By reviewOrderBtnUS = By.cssSelector(".checkout_place-order-btn");
-	private By BICFieldGiropay = By
-			.cssSelector(".el-form-item__content:nth-child(2) > .checkout_input > .el-input__inner");
-	private By dateOfBirthFieldKlarna = By.id("purchase-approval-date-of-birth");
-	private By continueKlarnaBtn = By.cssSelector("#purchase-approval-continue div:nth-child(2)");
 	private By typeCardLocator = By.id("c-ct");
 	private By idealBtn = By.xpath("//span[contains(text(), 'iDeal')]");
-	//css=.payment-method__IDEAL > .el-radio__label
 	private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
 	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
 	private By placeOrderBtnUS = By.cssSelector("span:nth-child(1) > span");
-	private By payPalDirectBtn = By.xpath("//img[@alt='pp']");
-	private By paypalBtn = By.id("paypal-animation-content");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");
 	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
 	private By selectState = By.xpath("//span[text()='Arizona']");
 	
-	//private By addressOption = By.xpath("li[@name='savedAddress']");
 	
 	protected PaymentMethodsCheckoutPage(WebDriver driver) {
 		super(driver);
@@ -206,30 +183,12 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void selectExpirationMonthFR() {
-		logger.info("Selecting expiration month credit card..");
-		WebDriverUtils.scroll350Down(driver, arrowExpMonth);
-		WebDriverUtils.clickOnElementWithWait(driver, arrowExpMonth);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonthFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
 	public void selectExpirationMonthUS() {
 		logger.info("Selecting expiration month credit card..");
 		WebDriverUtils.scroll350Down(driver, expirationDateMonthUS);
 		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonthUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, monthExpirationUS);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void selectExpirationMonthDE() {
-		logger.info("Selecting expiration month credit card..");
-		WebDriverUtils.scroll350Down(driver, arrowExpMonth);
-		WebDriverUtils.clickOnElementWithWait(driver, arrowExpMonth);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, expirationDateMonthDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -256,60 +215,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void enterAccountDetailsPayPal(String emailValue, String passwordValue) {
-		logger.info("Entering email..");
-		String winHandleBefore = driver.getWindowHandle();
-		// Perform the click operation that opens new window
-		// Switch to new window opened
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-		}
-		// Perform the actions on new window
-		// WebDriverUtils.findElement(driver, window);
-		WebDriverUtils.enterTextBox(driver, emailTxtBoxPayPal, emailValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, passwordTxtBoxPaypal, passwordValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		// driver.close();
-		// Switch back to original browser (first window)
-		// driver.switchTo().window(winHandleBefore);
-		// Continue with original browser (first window)
-	}
-
-	public void enterPasswordPayPal(String passwordValue) {
-		logger.info("Entering password..");
-		WebDriverUtils.enterTextBox(driver, passwordTxtBoxPaypal, passwordValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void clickLoginPayPal() {
-		logger.info("Loging into PayPal Account..");
-		WebDriverUtils.clickOnElementWithWait(driver, loginPayPal);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void clickContinuePayPal() {
-		logger.info("Continue into PayPal Account..");
-		WebDriverUtils.clickOnElementWithWait(driver, continueBtnPayPal);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void clickConfirmPayPal() {
-		logger.info("Confirm paypal payment into PayPal Account..");
-		String winHandleBefore = driver.getWindowHandle();
-		// Perform the click operation that opens new window
-		// Switch to new window opened
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-		}
-		WebDriverUtils.clickOnElementWithWait(driver, confirmPayPal);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-		// driver.close();
-		// Switch back to original browser (first window)
-		// driver.switchTo().window(winHandleBefore);
-		// Continue with original browser (first window)
-	}
-
+	
 	public void reviewOrder() {
 		 WebDriverUtils.scroll350Down(driver, reviewOrderBtn);
 		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
@@ -346,41 +252,16 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void enterBICGiropay(String BICValue) {
-		WebDriverUtils.enterTextBox(driver, BICFieldGiropay, BICValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void dateofBirthKlarna(String date) {
-		// WebElement iframeSwitch =
-		// driver.findElement(By.id("klarna-payments-device-recognition"));
-		// driver.switchTo().frame(iframeSwitch);
-		String winHandleBefore = driver.getWindowHandle();
-		// Perform the click operation that opens new window
-		// Switch to new window opened
-		for (String winHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(winHandle);
-		}
-		WebDriverUtils.enterTextBox(driver, dateOfBirthFieldKlarna, date);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		// driver.switchTo().defaultContent();
-	}
-
 	public void useAddressAsItIs() {
 		WebDriverUtils.clickOnElementWithWait(driver, useAddressAsItIsBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
 	
 
 	public void scroll1500DownSecurittCode() {
 		WebDriverUtils.scroll1500Down(driver, securityCode);
 	}
 
-	public void continueKlarna() {
-		WebDriverUtils.clickOnElementWithWait(driver, continueKlarnaBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
 
 	public void placeOrderUS() {
 		logger.info("Placing my order..");
@@ -389,10 +270,6 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void clickPayPalDirect() {
-		WebDriverUtils.clickOnElementWithWait(driver, payPalDirectBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
 
 	public void clickBuyNow() {
 		logger.info("Buying now..");
@@ -400,12 +277,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void gotoPayPal() {
-		logger.info("Going to PayPal..");
-		WebDriverUtils.clickOnElementWithWait(driver, paypalBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
+		
 	public void selectState() {
 		logger.info("Selecting state..");
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);

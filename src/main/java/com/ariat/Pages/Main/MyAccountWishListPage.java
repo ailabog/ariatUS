@@ -23,7 +23,6 @@ public class MyAccountWishListPage extends BasePage {
 
 	public static final Logger logger = LoggerFactory.getLogger(MyAccountWishListPage.class);
 
-	private By addressEmailTextBox = By.xpath("//input[@placeholder='Email address']");
 	private By passwordTextBox = By.id("dwfrm_login_password");
 	private By loginButton = By.name("dwfrm_login_login");
 	private By createAccountNowButton = By.name("dwfrm_login_register");
@@ -40,7 +39,6 @@ public class MyAccountWishListPage extends BasePage {
 	
 	public MyAccountWishListPage(WebDriver driver) {
 		super(driver);
-
 	}
 
 	public void returningCustomer(String email, String language) {
@@ -75,18 +73,15 @@ public class MyAccountWishListPage extends BasePage {
 	public void returningPassword(String password) {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-	
 	}
 
 	public void loginClick() {
 		logger.info("Logging into your account...");
 		WebDriverUtils.clickOnElementWithWait(driver, loginButton);
-	
 	}
 	
 	public void createAccountNowClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, createAccountNowButton);
-	
 	}
 	
 	public void findWishListFName(String Fname) {
@@ -106,8 +101,6 @@ public class MyAccountWishListPage extends BasePage {
 	
 	public void findWishListClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, findWishListButton);
-	
-		
 	}
 	
 	public MyWishListPage returnMyWishListPage() {
