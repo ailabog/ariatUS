@@ -122,6 +122,5 @@ public class CheckoutPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(shippingAddressText));
 		return new CheckoutProcessPage(driver);
 	}
-	
-	
+
 }

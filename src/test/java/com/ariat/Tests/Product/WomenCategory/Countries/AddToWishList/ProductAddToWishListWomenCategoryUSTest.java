@@ -2,16 +2,11 @@ package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
-import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
@@ -21,7 +16,6 @@ import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.BagsProductPage;
-import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
@@ -43,10 +37,7 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private MyWishListPage myWishListPage;
-	private WomenCategoryPage womenCategoryPage;
-	private WomenAccessoriesPage womenAccessoriesPage;
-	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
-	private BagsProductPage bagsProductPage;
+    private BagsProductPage bagsProductPage;
 	private MyAccountWishListPage myAccountWishListPage;
 	private CreateAccountPage createAccountPage;
 	
@@ -147,21 +138,14 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		womenCategoryPage.quit();
-		womenAccessoriesPage.quit();
-		womenAccessoriesBagsPage.quit();
-	    bagsProductPage.quit();
+		bagsProductPage.quit();
 		myWishListPage.quit();
-	   createAccountPage.quit();
-	}
+	    createAccountPage.quit();
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

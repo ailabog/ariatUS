@@ -133,7 +133,6 @@ public class EmailPreferencePage extends BasePage {
 	}
 	
 	
-	
 	public void savePrefUS() {
 		logger.info("Saving email preferences..");
 		WebDriverUtils.clickOnElementWithWait(driver, saveprefBtn);

@@ -1,11 +1,9 @@
 package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.Main.MyAccountPage;
@@ -15,9 +13,6 @@ import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
-import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
 
@@ -39,11 +34,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 	private MyWishListPage myWishListPage;
 	private EUCountries euCountry;
-
-	private WomenAccessoriesPage womenAccessoriesPage;
-	private WomenAccessoriesBagsPage womenAccessoriesBagsPage;
 	private BagsProductPage bagsProductPage;
-	private WomenCategoryPage womenCategoryPage;
 
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
@@ -131,20 +122,14 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		womenAccessoriesPage.quit();
-		womenAccessoriesBagsPage.quit();
-		bagsProductPage.quit();
+	    bagsProductPage.quit();
 		myWishListPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

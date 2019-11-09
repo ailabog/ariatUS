@@ -198,5 +198,4 @@ public class AddAddressesPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddressesPage(driver);
 	}
-	
 }

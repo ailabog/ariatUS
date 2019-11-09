@@ -1,7 +1,6 @@
 package com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -174,12 +173,6 @@ public class WomenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();
@@ -209,6 +202,7 @@ public class WomenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 		womenFeaturedHeritageCollectionPage.quit();
 		womenFeaturedWarmWeatherRidingPage.quit();
 		womenFeaturedTriFactorBreechPage.quit();
-		
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

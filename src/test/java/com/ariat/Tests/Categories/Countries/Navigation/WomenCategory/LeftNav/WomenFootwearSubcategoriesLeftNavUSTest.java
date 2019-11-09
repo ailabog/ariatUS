@@ -1,11 +1,9 @@
 package com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -130,8 +128,6 @@ public class WomenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 		logger.info("Finishing left navigation Men Footwear Western sub-categories test.");
 	}
 
-	
-
 	@Test(priority = 3)
 	public void leftNavigationMenFootwearCasualShoesSubcategories() {
 		logger.info("Starting left navigation Men Footwear Casual shoes sub-category test...");
@@ -149,12 +145,6 @@ public class WomenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();
@@ -182,5 +172,7 @@ public class WomenFootwearSubcategoriesLeftNavUSTest extends BaseTest {
 		womenFootwearCasualShoesPage.quit();
 		womenFootwearSneakersPage.quit();
 		womenFootwearCasual.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

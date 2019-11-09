@@ -59,9 +59,7 @@ public class AddACreditCardPage extends BasePage {
 		logger.info("Selecting the type of the card...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, typeCardSelectUS, type);
-	
-	}
-
+		}
 
 	public void enterCardNo(String number) {
 		logger.info("Selecting the type of the card...");

@@ -1,7 +1,6 @@
 package com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -137,20 +136,16 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
+		homePage.quit();
+		homePageUK.quit();
+		homePageUS.quit();
+		myBagPage.quit();
+		checkoutProcessPage.quit();
+		paymentMethodsCheckoutPage.quit();
+		checkoutPage.quit();
+		bagsProductPage.quit();
+		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
     }
-
-	@AfterSuite
-	public void tearDown() {
-			homePage.quit();
-			homePageUK.quit();
-			homePageUS.quit();
-			myBagPage.quit();
-			checkoutProcessPage.quit();
-			paymentMethodsCheckoutPage.quit();
-			checkoutPage.quit();
-			bagsProductPage.quit();
-			myAccountPage.quit();
-		}
-	}
+}

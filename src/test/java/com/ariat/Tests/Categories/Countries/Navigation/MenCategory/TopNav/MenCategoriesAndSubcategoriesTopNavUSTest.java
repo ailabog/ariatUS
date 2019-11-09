@@ -1,7 +1,6 @@
 package com.ariat.Tests.Categories.Countries.Navigation.MenCategory.TopNav;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -164,12 +163,6 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();
@@ -196,6 +189,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 		menFeaturedPage.quit();
 		menFeaturedTeamCollectionPage.quit();
 		menFeaturedVentTekPage.quit();
-		
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

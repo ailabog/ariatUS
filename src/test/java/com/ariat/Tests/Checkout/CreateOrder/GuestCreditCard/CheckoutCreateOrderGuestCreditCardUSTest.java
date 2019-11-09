@@ -1,7 +1,6 @@
 package com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -95,7 +94,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	} 
 	
 	
-	/*@Test(priority = 1)
+	@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedVisa() {
 		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -161,12 +160,6 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }*/
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		homePageUS.quit();
@@ -174,5 +167,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
     	bagsProductPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }
