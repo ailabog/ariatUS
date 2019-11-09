@@ -36,7 +36,7 @@ public class HeaderAndFooterUSTest extends BaseTest{
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority=0)
+	@Test
 	public void USHeader() {
 		logger.info("Starting the check for Header US elements:");
 		homePage = new HomePage(new ChromeDriver());

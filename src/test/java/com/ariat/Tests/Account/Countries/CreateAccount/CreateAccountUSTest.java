@@ -35,8 +35,7 @@ public class CreateAccountUSTest extends BaseTest {
 	private HomePageUK homePageUK;
 	private HomePageUS homePageUS;
 	private SignInPage signInPage;
-	private MyAccountPage myAccountPage;
-	private OrderDetailsPage orderDetailsPage;
+
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
