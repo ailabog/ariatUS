@@ -18,7 +18,6 @@ public class ProductRegistrationPage extends BasePage {
 	
 	private By emailTxtBox = By.id("dwfrm_productregistration_email");
 	private By hereLink = By.xpath("//form[@id='product-registration-form']/div[3]/div[2]/div/div/div[3]/fieldset/p[2]/span[2]");
-	private By code = By.xpath("dwfrm_productregistration_registrationcode");
 	private By continue1Btn = By.xpath("//*[@id=\"product-registration-form\"]/div[1]/div/div[4]/button");
 	private By continue2Btn = By.xpath("//form[@id='product-registration-form']/div[2]/div[2]/div/div/div[3]/button");
 	private By continue3Btn = By.xpath("//*[@id='product-registration-form']/div[3]/div[2]/div/div/div[3]/button");

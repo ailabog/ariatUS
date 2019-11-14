@@ -33,9 +33,15 @@ public class MyBagPage extends BasePage {
 	private By checkoutBtn = By.xpath("//a[@class='checkout minicart-button button large']");
 	private By continueShoppingBtn = By.xpath("//a[text()='Continue shopping']");
 	private By ariatLogo = By.className("global-nav-logo-svg");
+	private By removeProduct = By.linkText("Remove");
 
 	public MyBagPage(WebDriver driver) {
 		super(driver);
+	}
+	
+	public void removeProduct() {
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, removeProduct);
 	}
 
 	public void cancelFreeGift() {

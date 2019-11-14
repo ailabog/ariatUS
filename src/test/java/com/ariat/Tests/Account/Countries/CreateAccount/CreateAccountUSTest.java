@@ -12,7 +12,6 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.CreateAccountPage;
-import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.GenerateRandomDataUtils;
@@ -35,6 +34,7 @@ public class CreateAccountUSTest extends BaseTest {
 	private HomePageUK homePageUK;
 	private HomePageUS homePageUS;
 	private SignInPage signInPage;
+	private OrderDetailsPage orderDetailsPage;
 
 
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);

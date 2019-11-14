@@ -38,6 +38,7 @@ public class AddAddressesPage extends BasePage {
  	private By deleteAddressButton = By.name("dwfrm_profile_address_remove");
     private By stateBox = By.id("dwfrm_profile_address_states_state");
     private By missingFieldsText=By.xpath("//*contains[text(),'This field is required.']");
+    private By useOriginalBtn = By.name("dwfrm_addForm_useOrig");
    
   		
 	public AddAddressesPage(WebDriver driver) {
@@ -176,6 +177,14 @@ public class AddAddressesPage extends BasePage {
 		return new AddressesPage(driver);
 	}
 	
+	public AddressesPage returnAddressesPageUseOriginal() {
+		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
+		WebDriverUtils.clickOnElementWithWait(driver, useOriginalBtn);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(addressesText));
+		return new AddressesPage(driver);
+	}
+	
 	public AddressesPage returnAddressesSaveFromEditPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, saveAddressEditButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
@@ -192,7 +201,7 @@ public class AddAddressesPage extends BasePage {
 	}
 	
 	public AddressesPage returnAddressesFromEditDeletePage() {
-		WebDriverUtils.scrollMiddlePage(driver, deleteAddressButton);
+		WebDriverUtils.scroll1500Down(driver, deleteAddressButton);
 		WebDriverUtils.clickOnElementWithWait(driver, deleteAddressButton);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));

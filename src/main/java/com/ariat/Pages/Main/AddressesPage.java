@@ -74,9 +74,9 @@ public class AddressesPage extends BasePage {
 		if (WebDriverUtils.findElement(driver, deleteLink) != null) {
 
 			WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, cancelButtonDialog);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			logger.info("Cancel deleting {}" + addressValue + "was done with success");
 
 		} else {
@@ -89,9 +89,9 @@ public class AddressesPage extends BasePage {
 		if (WebDriverUtils.findElement(driver, deleteLink) != null) {
 
 			WebDriverUtils.clickOnElementWithWait(driver, deleteLink);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, deleteButtonDialog);
-			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			logger.info("Delete {}" + addressValue + "was done with success");
 
 		} else {
@@ -145,8 +145,9 @@ public class AddressesPage extends BasePage {
 	public void loadMoreAddesses() {
 		do {
 			logger.info("Loading more addresses...");
-			WebDriverUtils.scrollMiddlePage(driver, loadMoreButton);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.scrollMiddlePage(driver, loadMoreButton);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_2000_SECONDS);
 			WebDriverUtils.clickOnElementWithWait(driver, loadMoreButton);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		} while (WebDriverUtils.findElement(driver, loadMoreButton) == null);
@@ -158,13 +159,14 @@ public class AddressesPage extends BasePage {
 	public void addAddress() {
 		logger.info("Adding new address...");
 		WebDriverUtils.scrolltoElement(driver, AddAddressButton);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, AddAddressButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
+		
 	}
 
 	public AddAddressesPage returnAddAddresses() {
 		WebDriverUtils.clickOnElementWithWait(driver, addressesLink);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_2000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(addressesText));
 		return new AddAddressesPage(driver);
 	}

@@ -78,7 +78,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.selectAddressUS();
+		//checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
@@ -104,6 +104,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
@@ -127,6 +128,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();

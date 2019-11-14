@@ -12,15 +12,14 @@
                           
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
                                      
-               <class name="com.ariat.Tests.CreditCard.Countries.AddCreditCard.Add_DeleteCreditCardUSTest" />
+               <class name="com.ariat.Tests.Product.WomenCategory.Countries.AddToCart.ProductAddToCartWomenCategoryUSTest" />
                          
                <class name="com.ariat.Tests.Search.Countries.SearchUSTest" />
                            
                <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUSTest" />
               
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
-            
-                                  
+                                     
                <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUSTest" />
                 
                <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUSTest" />
@@ -28,9 +27,7 @@
                <class name="com.ariat.Tests.Logout.Countries.LogoutUSTest" />
               
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
-              
-               <class name="com.ariat.Tests.MyAccount.Countries.EmailPreferences.EmailPreferencesUSTest" />
-             
+                               
                <class name="com.ariat.Tests.MyAccount.Countries.MyAccountLeftNavigation.MyAccountLeftNavigationUSTest" />
                                             
                <class name="com.ariat.Tests.Orders_View.OrderDetailsUSTest" />

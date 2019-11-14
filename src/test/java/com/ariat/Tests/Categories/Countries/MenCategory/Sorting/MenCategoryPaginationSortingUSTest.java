@@ -59,7 +59,7 @@ public class MenCategoryPaginationSortingUSTest extends BaseTest {
 		logger.info("Finishing  sort and navigate pagination test.");
 	}
 	
-	@AfterTest
+/*	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -67,5 +67,5 @@ public class MenCategoryPaginationSortingUSTest extends BaseTest {
 		menCategoryPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+    }*/
 }

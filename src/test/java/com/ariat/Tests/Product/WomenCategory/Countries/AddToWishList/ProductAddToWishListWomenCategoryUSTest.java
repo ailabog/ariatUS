@@ -105,7 +105,6 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
-		myWishListPage = bagsProductPage.returnMyWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
 		createAccountPage.firstName(FIRST_NAME);
 		createAccountPage.lastNameInfo(LAST_NAME);
@@ -127,7 +126,6 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		bagsProductPage = homePageUS.returnBagsProductPage();
-		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);

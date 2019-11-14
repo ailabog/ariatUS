@@ -23,22 +23,15 @@ import com.ariat.Utils.WebDriverUtils;
 public class MenCategoryPage extends BasePage{
 	
 	private By menFootwearCategory = By.xpath("(//a[contains(text(),'Footwear')])[2]");
-    private By menFootwearCategoryDE = By.linkText("Schuhe");
-    private By menFootwearCategoryFR = By.xpath("//a[contains(text(),'Bottes et boots')])[2]");
-	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+   	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing')]");
-	private By menClothingCategoryFR = By.xpath("//a[contains(text(),'Vêtements')])[3]");
-	private By menClothingCategoryDE = By.xpath("(//a[contains(text(),'Bekleidung')])[2]");
 	private By menClothingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menAccesoriesCategory = By.xpath("//a[contains(text(),'Accessories')]");
-    private By menAccesoriesCategoryFR = By.xpath(" //a[contains(text(),'Accessoires')])[3]");
     private By menAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By menFeaturedCategory = By.xpath("//a[contains(text(),'Featured')]");
-    private By menFeaturedCategoryFR = By.xpath("//a[contains(text(),'Featured')])[2]");
     private By menFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menCategory = By.xpath("//a[contains(text(),'Men')]");
     private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    private By menCategoryDE = By.xpath("//a[contains(text(),'Herren')]");
     private By footwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
     private By clothingCategoryLeftNav =By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
     private By accessoriesCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
@@ -67,7 +60,6 @@ public class MenCategoryPage extends BasePage{
 	private By recommendedLink = By.linkText("Recommended");
 	private By priceHighToLowLink = By.linkText("Price (High to Low)");
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
-	private By bestSellersLink = By.linkText("Best Sellers");
 	private By bestSellersLinkUS = By.linkText("Best Seller");
 		
 
@@ -82,13 +74,13 @@ public class MenCategoryPage extends BasePage{
 	}
 	
 	public void clickSortUp() {
-		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryUp);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryUp);
 	}
 	
 	public void clickSortDown() {
-		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, sortDropWomenCategoryDown);
 	}
 
 	public void sortProductWomenCategoryRecommended() {
@@ -106,40 +98,40 @@ public class MenCategoryPage extends BasePage{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
-	public void sortProductWomenCategoryBestSellers() {
-		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLink);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
 		
 	public void sortProductWomenCategoryBestSellersUS() {
-		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLinkUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLinkUS);
 	}
 	
 	
 	public void show36ItemsUp() {
-		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
 	}
 
 	public void show72ItemsUp() {
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
+		
 	}
 
 	public void show108ItemLinkUp() {
-		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLink);
+		
 	}
 	
 	public void nextPaginationUp() {
-		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonUp);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonUp);
+		
 	}
 
 	public void prevPaginationButtonUp() {
-		WebDriverUtils.clickOnElementWithWait(driver, prevPaginationButtonUp);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, prevPaginationButtonUp);
+		
 	}
 
 	public void backToTopClick() {
@@ -150,26 +142,26 @@ public class MenCategoryPage extends BasePage{
 
 	public void show36ItemsDown() {
 		WebDriverUtils.scrolltoElement(driver, show36ItemLink);
-	    WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+	    WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
 	}
 
 	public void show72ItemsDown() {
 		WebDriverUtils.scrollDown(driver, show72ItemLink);
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
 	}
 
 	public void show108ItemLinkDown() {
 		WebDriverUtils.scrollBottomPage(driver, show108ItemLinkDown);
-		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
+		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkDown);
+		}
 	
 	public void nextPaginationDown() {
 		WebDriverUtils.scrollElementToPosition(driver, nextPaginationButtonDown);
-		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonDown);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonDown);
 	}
 
 	public void prevPaginationButtonDown() {
