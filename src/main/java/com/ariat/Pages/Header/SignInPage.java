@@ -40,17 +40,15 @@ public class SignInPage extends BasePage {
 	private By sendForgotButton = By.name("dwfrm_requestpassword_send");
 	private By closeForgotButton = By.xpath("//*[@id=\"ext-gen44\"]/body/div[9]/div[1]/a/span");
 	private By checkOrderTextBox = By.id("dwfrm_ordertrack_orderNumber");
-
 	private By emailAddressCheckOrderTextBox = By.id("dwfrm_ordertrack_email");
 	private By billingCheckOrderTextBoxTextBox = By.id("dwfrm_ordertrack_postalCode");
 	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");
 	private By errPassMsg = By.xpath("//*[@id=\"dwfrm_login\"]/div[1]");
-
 	private By createAccountButton = By.name("dwfrm_login_register");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 	private By errorMessageText = By.className("error-form");
-	private By closeButton = By.className("close-button");
+	private By closeButton = By.xpath("//a[@class='ui-dialog-titlebar-close ui-corner-all']");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 
 

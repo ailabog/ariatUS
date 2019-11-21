@@ -78,7 +78,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		//checkoutProcessPage.selectAddressUS();
+		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
@@ -103,6 +103,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		myBagPage = bagsProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
@@ -127,6 +128,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		myBagPage = bagsProductPage.returnMyBagPage();
    		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();

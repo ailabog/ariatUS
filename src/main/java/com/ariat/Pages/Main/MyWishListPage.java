@@ -60,7 +60,6 @@ public class MyWishListPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
-	
 	public void closeSendToAFriend() {
 		logger.info("Closing the sharing wish list with a friend window");
 		WebDriverUtils.clickOnElement(driver, closeSendFriendButton);

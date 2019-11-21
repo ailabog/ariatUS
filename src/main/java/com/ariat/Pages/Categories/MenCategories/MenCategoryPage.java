@@ -46,7 +46,7 @@ public class MenCategoryPage extends BasePage{
     private By westernTextLeftNav = By.xpath("//*[contains(text(),'Western']");
     private By fashionTextLeftNav = By.xpath("//*[contains(text(),'Fashion']");
     private By workTextLeftNav = By.xpath("//*[contains(text(),'Work']");
-    private By sortDropWomenCategoryUp = By.xpath("//div[@id='main']/div/div[2]/div[3]/div[2]/div/div/h3/p/span");
+    private By sortDropWomenCategoryUp = By.cssSelector(".ui-state-hover .icon-arrow-right");
     private By show36ItemLink = By.linkText("36 Items");
 	private By show72ItemLink = By.linkText("72 Items");
 	private By show108ItemLink = By.linkText("108 Items");

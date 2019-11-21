@@ -79,7 +79,7 @@ public class DeleteAddressUSTest extends BaseTest {
 		logger.info("Finishing add address US test");
 	}
 	
-	@Test(priority = 1)
+	@Test(priority=1)
 	public void deleteAddressTestUS() {
 		logger.info("Starting deleting address US test");
 		homePage = new HomePage(new ChromeDriver());
@@ -91,8 +91,8 @@ public class DeleteAddressUSTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		addressesPage.deleteAddressCreatedYes("nn");
+		addressesPage.deleteAddressCreatedNo(ADDRESS_ID);
+		addressesPage.deleteAddressCreatedYes(ADDRESS_ID);
 		logger.info("Finishing deleting address US test");
 	}
 	

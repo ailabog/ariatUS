@@ -110,24 +110,21 @@ public class AddAddressesPage extends BasePage {
 
 	public void enterAddressId(String addressId) {
 		logger.info("Entering poste code: ");
-		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
+		WebDriverUtils.enterTextBox(driver, addressIdTextBox, addressId);
 	}
 
 	public void clearAddressId() {
 		logger.info("Clearing text box Address Id:");
-		WebDriverUtils.clearElement(driver, addressIdTextBox);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
+		WebDriverUtils.clearElement(driver, addressIdTextBox);
 	}
 
 	public void saveAddress() {
 		logger.info("Saving this address: ");
 		WebDriverUtils.scroll500Down(driver, saveAddressButton);
-		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-		
+		WebDriverUtils.clickOnElementWithWait(driver, saveAddressButton);
 	}
 
 	public void saveAddressEdit() {

@@ -64,7 +64,7 @@ public class EmailPreferencesUSTest extends BaseTest {
 		logger.info("Update personal information test ended...");
 	}
 	
-	@AfterTest
+	/*@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -74,5 +74,5 @@ public class EmailPreferencesUSTest extends BaseTest {
 		emailPreferencesPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+    }*/
 }

@@ -54,7 +54,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
 	private By arrowSelectAddress = By.cssSelector(".el-icon-arrow-up");
-	private By addressOption = By.xpath("//li//span[text()='5th - Avenue']");
+	private By addressOption = By.xpath("//span[contains(text(), '0ndEy - Avenue, 5th')]");
 
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
