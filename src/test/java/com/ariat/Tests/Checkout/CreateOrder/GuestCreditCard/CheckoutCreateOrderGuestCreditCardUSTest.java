@@ -82,8 +82,6 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		//paymentMethodsCheckoutPage.selectTypeCardMasterCard();
-		paymentMethodsCheckoutPage.selectTypeCard("Master Card");
 		paymentMethodsCheckoutPage.enterCardNoUS(typeCard.MASTER_CARD.getNumber());
 		paymentMethodsCheckoutPage.selectExpirationMonthUS();
 		paymentMethodsCheckoutPage.selectExpirationYearUS();
@@ -123,7 +121,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
-	} 
+	}
 	
 	@Test(priority = 2)
 	public void checkoutCreateNewOrderNotBeingLoggedAmericanExpress() {
@@ -147,8 +145,6 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		//paymentMethodsCheckoutPage.selectTypeCardAmericanExpress();
-		paymentMethodsCheckoutPage.selectTypeCard("American Express");
 		paymentMethodsCheckoutPage.enterCardNoUS(typeCard.AMERICAN_EXPRESS.getNumber());
 		paymentMethodsCheckoutPage.selectExpirationMonthUS();
 		paymentMethodsCheckoutPage.selectExpirationYearUS();
@@ -158,7 +154,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
 	} 
 	
-	/*@AfterTest
+	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -167,7 +163,7 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.quit();
 		checkoutPage.quit();
     	bagsProductPage.quit();
-		KillChrome kill = new KillChrome();
+    	KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }*/
+	}
 }

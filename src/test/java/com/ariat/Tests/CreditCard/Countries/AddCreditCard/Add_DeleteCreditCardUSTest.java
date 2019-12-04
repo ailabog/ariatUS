@@ -56,7 +56,7 @@ public class Add_DeleteCreditCardUSTest extends BaseTest{
 	@Test
 	public void add_deleteCreditCardUSTest() {
 		String expirationDate = "MONTH/YEAR";
-		logger.info("Starting add credit card & delete it States test");
+		logger.info("Starting add a credit card US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -68,18 +68,15 @@ public class Add_DeleteCreditCardUSTest extends BaseTest{
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.enterCardId(CARD_ID);
 		addACreditCardPage.enterCardOwner(CARD_OWNER);
-		addACreditCardPage.selectTypeCard(typeCard.MASTER_CARD1.getName());
-		addACreditCardPage.enterCardNo(typeCard.MASTER_CARD1.getNumber());
-		addACreditCardPage.enterSecurityCode(typeCard.MASTER_CARD1.getCvs());
-		addACreditCardPage.selectExpirationYearCard(YEAR);
-		addACreditCardPage.selectExpirationMonthCard(MONTH);
+		addACreditCardPage.enterCardNoUS(typeCard.VISA.getNumber());
+		addACreditCardPage.selectExpirationMonthYearUS("June", "2021");
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		logger.info("Finishing add credit card & delete it United States test");
   } 
 	
-	/*@AfterTest
+	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -90,5 +87,5 @@ public class Add_DeleteCreditCardUSTest extends BaseTest{
 		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }*/
+    }
 }
