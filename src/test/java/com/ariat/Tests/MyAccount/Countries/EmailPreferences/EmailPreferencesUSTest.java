@@ -55,8 +55,7 @@ public class EmailPreferencesUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUS");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		emailPreferencesPage = myAccountPage.returnEmailPreferencePageLeftNav();
 		emailPreferencesPage.ariatProductsCheck("FASHION");
@@ -64,7 +63,7 @@ public class EmailPreferencesUSTest extends BaseTest {
 		logger.info("Update personal information test ended...");
 	}
 	
-	/*@AfterTest
+	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -74,5 +73,5 @@ public class EmailPreferencesUSTest extends BaseTest {
 		emailPreferencesPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }*/
+    }
 }

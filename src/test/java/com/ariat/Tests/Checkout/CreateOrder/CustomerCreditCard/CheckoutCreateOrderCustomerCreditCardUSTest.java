@@ -71,8 +71,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUS");
-		signInPage.returningPassword(PASSWORDEXISTENT);
+		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUS", PASSWORDEXISTENT);
 		myAccountPage = signInPage.returnMyAccountPage();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myBagPage = bagsProductPage.returnMyBagPage();
@@ -96,8 +95,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
    		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
    		signInPage = homePageUS.returnSignInPage();
-   		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUS");
-   		signInPage.returningPassword(PASSWORDEXISTENT);
+   		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUS", PASSWORDEXISTENT);
    		myAccountPage = signInPage.returnMyAccountPage();
    		bagsProductPage = homePageUS.returnBagsProductPage();
    		myBagPage = bagsProductPage.returnMyBagPage();
@@ -121,8 +119,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
    		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
    		signInPage = homePageUS.returnSignInPage();
-   		signInPage.returningCustomer(EMAILEXISTENT, "EnglishUS");
-   		signInPage.returningPassword(PASSWORDEXISTENT);
+   		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUS", PASSWORDEXISTENT);
    		myAccountPage = signInPage.returnMyAccountPage();
    		bagsProductPage = homePageUS.returnBagsProductPage();
    		myBagPage = bagsProductPage.returnMyBagPage();
