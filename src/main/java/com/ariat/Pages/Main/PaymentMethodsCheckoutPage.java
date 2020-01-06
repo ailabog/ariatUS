@@ -33,7 +33,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By reviewOrderBtnUS = By.cssSelector(".checkout_place-order-btn");
 	private By idealBtn = By.xpath("//span[contains(text(), 'iDeal')]");
 	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
-	private By placeOrderBtnUS = By.cssSelector("span:nth-child(1) > span");
+	private By placeOrderBtnUS = By.id("confirmpayment");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By arrowCountry = By.xpath("//span[@class='el-input__suffix']");
 	private By selectState = By.xpath("//span[text()='Arizona']");
@@ -163,7 +163,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 
 	public void placeOrderUS() {
 		logger.info("Placing my order..");
-		WebDriverUtils.scroll750Down(driver, placeOrderBtnUS);
+		WebDriverUtils.scroll350Down(driver, placeOrderBtnUS);
 		WebDriverUtils.clickOnElementWithWait(driver, placeOrderBtnUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}

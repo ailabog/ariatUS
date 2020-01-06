@@ -162,7 +162,6 @@ public class BagsProductPage extends BasePage {
 	}
 
 	public void update() {
-		WebDriverUtils.scrollMoreDown(driver, updateButton);
 		WebDriverUtils.clickOnElementWithWait(driver, updateButton);
 	
 	}

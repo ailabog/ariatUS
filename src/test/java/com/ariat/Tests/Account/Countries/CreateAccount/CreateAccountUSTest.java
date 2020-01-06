@@ -67,6 +67,7 @@ public class CreateAccountUSTest extends BaseTest {
 		createAccountPage.createAccountClickWithoutScroll();
 		logger.info("Finishing create new account test...");
 	}
+	
 	@Test(priority = 1)
 	public void returningCustomerTestUS() {
 		logger.info("Starting returning customer test...");

@@ -200,6 +200,14 @@ public class WebDriverUtils {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
 		jsExec.executeScript("javascript:window.scrollBy(0, 5000)");
 	}
+	
+	
+	
+	public static void scroll(WebDriver driver, By locator, int dimension) {
+		JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+		jsExec.executeScript("javascript:window.scrollBy(0, dimension)");
+	}
+	
 
 	public static void scrollMiddlePage(WebDriver driver, By locator) {
 		JavascriptExecutor jsExec = (JavascriptExecutor) driver;

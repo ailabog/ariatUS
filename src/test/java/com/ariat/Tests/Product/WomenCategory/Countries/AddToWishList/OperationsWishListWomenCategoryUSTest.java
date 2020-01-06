@@ -97,25 +97,27 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		myWishListPage.addToCartItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
 				+ homePageUK.minicartShow());
-
 	}
 
-	@Test(priority = 3)
-	public void productPageWomenCategoryAddToWishListRemoveItemTest() {
-		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
-		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
-		bagsProductPage = homePageUS.returnBagsProductPage();
-		myWishListPage = bagsProductPage.returnMyWishListPage();
-		myWishListPage.removeItemWishList();
-		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");
-		//logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
-		//		+ myWishListPage.noItemWishList());
-	}
+	
+	  @Test(priority = 3) 
+	  public void
+	  productPageWomenCategoryAddToWishListRemoveItemTest() { logger.
+	  info("Starting product page -> Women Category Add to Wishlist & add to cart test-..."
+	  ); homePage = new HomePage(new ChromeDriver());
+	  homePage.load(environment.DEVELOPMENT.getURL()); homePageUK = (HomePageUK)
+	  homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+	  homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA,
+	  euCountry.USA.getCurrencyISO()); signInPage = homePageUS.returnSignInPage();
+	  signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+	  bagsProductPage = homePageUS.returnBagsProductPage(); 
+	  myWishListPage = bagsProductPage.returnMyWishListPage();
+	  myWishListPage.removeItemWishList();
+	  logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."); 
+	  //logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
+	  // + myWishListPage.noItemWishList()); 
+	  }
+
 	
 	@AfterTest
 	public void clearBrowserSession() {

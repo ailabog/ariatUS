@@ -34,7 +34,7 @@ public class MyWishListPage extends BasePage {
 			.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[5]/form/div[3]/div[1]/div/div/span[1]");
 	private By prioritySelect = By.id("dwfrm_wishlist_items_i0_priority");
 	private By updateItemWishList = By.name("dwfrm_wishlist_items_i0_updateItem");
-	private By removeItemWishList = By.xpath("//button[text()='Remove']");
+	private By removeItemWishList = By.xpath("//button[@name='dwfrm_wishlist_items_i0_deleteItem']");
 	private By editItemWishList = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[3]/div[2]/a[1]");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
@@ -50,8 +50,8 @@ public class MyWishListPage extends BasePage {
 
 	public void sendListToAFriend(String nameFrined, String email) {
 		logger.info("Sending my wish list to a friend");
-		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButton);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButton);
 		WebDriverUtils.enterTextBox(driver, nameTxtBox, nameFrined);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, emailFriendTextBox, email);
@@ -100,8 +100,8 @@ public class MyWishListPage extends BasePage {
 	}
 
 	public void removeItemWishList() {
-		WebDriverUtils.clickOnElementWithWait(driver, removeItemWishList);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, removeItemWishList);
 	}
 
 	public void editItemWishList() {
