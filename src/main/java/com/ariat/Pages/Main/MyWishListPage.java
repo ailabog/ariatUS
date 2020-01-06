@@ -38,7 +38,6 @@ public class MyWishListPage extends BasePage {
 	private By editItemWishList = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div/div[1]/div[3]/div[2]/a[1]");
 	private By addToCartWishList = By.name("dwfrm_wishlist_items_i0_addItemToCart");
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
-    
     private By noIteminWishListText = By.xpath("//*[contains[text(), 'You have no items on your wishlist.']");
    
 	 
