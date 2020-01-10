@@ -38,7 +38,7 @@ public class SearchUSTest extends BaseTest {
 	}
 
 	@Test
-	public void searchProductTest() {
+	public void searchProductTestUS() {
 		logger.info("Starting search products US test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

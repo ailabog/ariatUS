@@ -72,7 +72,7 @@ public class Add_DeleteCreditCardUSTest extends BaseTest{
 		logger.info("Finishing add credit card & delete it United States test");
   } 
 	
-	/*@AfterTest
+	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
@@ -83,5 +83,5 @@ public class Add_DeleteCreditCardUSTest extends BaseTest{
 		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }*/
+    }
 }

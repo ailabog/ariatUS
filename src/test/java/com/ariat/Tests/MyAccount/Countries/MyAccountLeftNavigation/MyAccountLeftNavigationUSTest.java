@@ -43,8 +43,8 @@ public class MyAccountLeftNavigationUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void myAccountAccessPersonalInfoUKTest() {
-		logger.info("Starting personal info UK test...");
+	public void myAccountAccessPersonalInfoTestUS() {
+		logger.info("Starting personal info US test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -71,7 +71,7 @@ public class MyAccountLeftNavigationUSTest extends BaseTest {
 		myAccountPage.returnEmailPreferencePageLeftNav();
 		myAccountPage.myAccountClick();
 		myAccountPage.logoutMiddle();
-		logger.info("Finishing email preferences UK test...");
+		logger.info("Finishing email preferences US test...");
 	}
 
 	@Test(priority = 2)

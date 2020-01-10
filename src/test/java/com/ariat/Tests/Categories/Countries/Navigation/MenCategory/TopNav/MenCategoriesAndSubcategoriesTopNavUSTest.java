@@ -80,7 +80,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void topnNavMenFootwearCategories() {
+	public void topnNavMenFootwearCategoriesUS() {
 		logger.info("Starting navigate Men Footwear sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -103,7 +103,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void topNavMenClothingCategoriesTest() {
+	public void topNavMenClothingCategoriesTestUS() {
 		logger.info("Starting navigate Men Clothing sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -124,7 +124,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void topNavmenAccessoriesCategoriesTest() {
+	public void topNavmenAccessoriesCategoriesTestUS() {
 		logger.info("Starting navigate men Accessories sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -145,7 +145,7 @@ public class MenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 3)
-	public void topNavmenFeaturedCategoriesTest() {
+	public void topNavmenFeaturedCategoriesTestUS() {
 		logger.info("Starting navigate Men Featured sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

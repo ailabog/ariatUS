@@ -86,7 +86,7 @@ public class WomenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void navigateWomenFootwearCategories() {
+	public void navigateWomenFootwearCategoriesUS() {
 		logger.info("Starting navigate Women Footwear sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -107,7 +107,7 @@ public class WomenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void navigateWomenClothingCategoriesTest() {
+	public void navigateWomenClothingCategoriesTestUS() {
 		logger.info("Starting navigate Women Clothing sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -130,7 +130,7 @@ public class WomenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void navigateWomenAccessoriesCategoriesTest() {
+	public void navigateWomenAccessoriesCategoriesTestUS() {
 		logger.info("Starting navigate Women Accessories sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -153,7 +153,7 @@ public class WomenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	}
 
 	@Test(priority = 3)
-	public void navigateWomenFeaturedCategoriesTest() {
+	public void navigateWomenFeaturedCategoriesTestUS() {
 		logger.info("Starting navigate Women Featured sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

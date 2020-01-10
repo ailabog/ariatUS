@@ -47,7 +47,7 @@ public class PersonalInformationUSTest extends BaseTest {
 	}
 
 	@Test
-	public void updatePersonalInformationTest() {
+	public void updatePersonalInformationTestUS() {
 		logger.info("Starting update personal information test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -58,10 +58,7 @@ public class PersonalInformationUSTest extends BaseTest {
 		myAccountPage = signInPage.returnMyAccountPage();
 		personalInformationPage = myAccountPage.returnPersonalInfoPageMiddleNav();
 		personalInformationPage.clearEmail();
-		personalInformationPage.enterEmail(NEW_EMAIL);
-		personalInformationPage.confirmEmail(NEW_EMAIL);
-		personalInformationPage.enterPassword(PASSWORD);
-		personalInformationPage.confirmPassword(PASSWORD);
+		personalInformationPage.setDataEmailInfo(NEW_EMAIL, NEW_EMAIL, PASSWORD, PASSWORD);
 		personalInformationPage.saveEdits();
 		logger.info("Update personal information test ended...");
 	}

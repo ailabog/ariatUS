@@ -49,7 +49,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void productPageWomenCategoryAddToWishListShareToAFriendTest() {
+	public void productPageWomenCategoryAddToWishListShareToAFriendTestUS() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & share it to a friend test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -64,7 +64,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void productPageWomenCategoryAddToWishListDifferentActionsTest() {
+	public void productPageWomenCategoryAddToWishListDifferentActionsTestUS() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & different actions test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -84,7 +84,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void productPageWomenCategoryAddToWishListAddToCartTest() {
+	public void productPageWomenCategoryAddToWishListAddToCartTestUS() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -102,8 +102,8 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	
 	  @Test(priority = 3) 
 	  public void
-	  productPageWomenCategoryAddToWishListRemoveItemTest() { logger.
-	  info("Starting product page -> Women Category Add to Wishlist & add to cart test-..."
+	  productPageWomenCategoryAddToWishListRemoveItemTestUS() { 
+	  logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test-..."
 	  ); homePage = new HomePage(new ChromeDriver());
 	  homePage.load(environment.DEVELOPMENT.getURL()); homePageUK = (HomePageUK)
 	  homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
