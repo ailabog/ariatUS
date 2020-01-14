@@ -57,6 +57,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
@@ -72,6 +73,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Medium");
@@ -92,6 +94,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
@@ -107,9 +110,9 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	  ); homePage = new HomePage(new ChromeDriver());
 	  homePage.load(environment.DEVELOPMENT.getURL()); homePageUK = (HomePageUK)
 	  homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-	  homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA,
-	  euCountry.USA.getCurrencyISO()); signInPage = homePageUS.returnSignInPage();
+	  homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO()); signInPage = homePageUS.returnSignInPage();
 	  signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+	  signInPage.loginClick();
 	  bagsProductPage = homePageUS.returnBagsProductPage(); 
 	  myWishListPage = bagsProductPage.returnMyWishListPage();
 	  myWishListPage.removeItemWishList();

@@ -65,7 +65,7 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority=0)
+/*	@Test(priority=0)
 	public void productPageWomenCategoryAddToWishListLoggedTestUS() {
 		logger.info("Starting product page -> Men Category Add to Wishlist being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -74,11 +74,12 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList being logged test.");
 		
-	} 
+	} */
 	
  @Test(priority=1)
 	public void productPageWomenCategoryAddToWishListNotLoggedTestUS() {
@@ -91,6 +92,7 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myAccountWishListPage = bagsProductPage.returnMyAccountWishListPage();
 		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.loginClick();
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList not being logged test.");
 	}

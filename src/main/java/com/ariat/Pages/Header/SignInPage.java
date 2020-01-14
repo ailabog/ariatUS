@@ -88,7 +88,7 @@ public class SignInPage extends BasePage {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-	   //WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	    //WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		//WebDriverUtils.clickOnElementWithWait(driver, loginButton);
 	}
 
