@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
+import com.ariat.Enums.States;
 import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
@@ -26,7 +27,7 @@ import com.ariat.Utils.KillChrome;
  *
  */
 
-public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
+public class CheckoutCreateOrderGuestCreditCardKentuckyUSTest extends BaseTest {
 
 	private Environments environment;
 	private EUCountries euCountry;
@@ -43,14 +44,15 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	public static final String CARD_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
-	public static final String ADDRESS = "W. Adams St.";
-	public static final String CITY = "Phoenix";
-	public static final String STATE = "Arizona";
-	public static final String ZIP_CODE = "85007";
+	public static final String ADDRESS = "Adele Avenue";
+	public static final String CITY = "Georgetown";
+	public static final String STATE = "Kentucky";
+	public static final String ZIP_CODE = "40208";
 	public static final String MOBILE = "(602) 364-2722";
 	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 	private ListOfCreditCards typeCard;
+	private States state;
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
@@ -61,8 +63,8 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void checkoutCreateNewOrderNotBeingLoggedMasterCardUS() {
-		logger.info("Starting checkout -> create new order without being logged credit card Master Card test...");
+	public void checkoutCreateNewOrderNotBeingLoggedMasterCardKentucky() {
+		logger.info("Starting Kentucky checkout -> create new order without being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -71,19 +73,19 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL, state.KENTUCKY);
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.MASTER_CARD.getNumber(), typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
-		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
+		logger.info("Finishing Kentucky checkout -> create new order without being logged credit card Master Card test.");
 	} 
 	
 	
 	@Test(priority = 1)
-	public void checkoutCreateNewOrderNotBeingLoggedVisaUS() {
-		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
+	public void checkoutCreateNewOrderNotBeingLoggedVisaKentucky() {
+		logger.info("Starting Kentucky checkout -> create new order without being logged credit card Visa test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -92,18 +94,18 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL, state.KENTUCKY);
     	paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.VISA.getNumber(), typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
-		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
+		logger.info("Finishing Kentucky checkout -> create new order without being logged credit card Visa test.");
 	}
 	
 	@Test(priority = 2)
-	public void checkoutCreateNewOrderNotBeingLoggedAmericanExpressUS() {
-		logger.info("Starting checkout -> create new order without being logged credit card American Express test...");
+	public void checkoutCreateNewOrderNotBeingLoggedAmericanExpressKentucky() {
+		logger.info("Starting Kentucky checkout -> create new order without being logged credit card American Express test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
@@ -112,13 +114,13 @@ public class CheckoutCreateOrderGuestCreditCardUSTest extends BaseTest {
 		myBagPage = bagsProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUS(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL, state.KENTUCKY);
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckoutUS(CARD_NAME, typeCard.AMERICAN_EXPRESS.getNumber(), typeCard.AMERICAN_EXPRESS.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
-		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
+		logger.info("Finishing Kentucky checkout -> create new order without being logged credit card American Express test.");
 	} 
 	
 	@AfterTest

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.ariat.Enums.States;
 
 import com.ariat.Utils.WebDriverUtils;
 
@@ -33,7 +34,7 @@ public class CheckoutProcessPage extends BasePage {
 	private By checkCheckBoxBilling = By.xpath("//input[@value='Use this address for Billing']");
 	private By mobile = By.name("phone");
 	private By email = By.name("email");
-	private By addToAddressBoxCheck = By.xpath("//input[@vlaue='Add to Address Book']");
+	private By addToAddressBoxCheck = By.xpath("//input[@value='Add to Address Book']");
 	private By stayInTouchCheck = By
 			.xpath("//input[@value='Stay in touch. Learn about our new products and special offers first!']");
 	private By continueCheckout1 = By.cssSelector(".el-button--primary:nth-child(1)");
@@ -55,12 +56,16 @@ public class CheckoutProcessPage extends BasePage {
 	private By signInLink = By.xpath("//a[text()='Sign In']");
 	private By arrowSelectAddress = By.cssSelector(".el-icon-arrow-up");
 	private By addressOption = By.xpath("//span[contains(text(), '0ndEy - Avenue, 5th')]");
+	private States state;
 
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
 	}
-	
-	public void setInfoAccountSecureCheckoutUS(String nameValue, String lastValue, String addressValue, String cityValue, String zipCodeValue, String mobileValue, String emailValue) {
+
+	public void setInfoAccountSecureCheckoutUS(String nameValue, String lastValue, String addressValue,
+			String cityValue, String zipCodeValue, String mobileValue, String emailValue, States state)
+
+	{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -71,9 +76,51 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.enterTextBox(driver, city, cityValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
-		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, selectState);
+			
+		logger.info("Selecting US state...");
+
+		switch (state.getName()) {
+		case "Alaska":
+			WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, state.getLocator());
+		
+		case "Arizona":
+			WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, state.getLocator());
+	
+		case "California":
+			WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, state.getLocator());
+
+		case "Hawaii":
+			WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.scrolltoElement(driver, state.getLocator());
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.clickOnElementWithWait(driver, state.getLocator());
+
+		case "Kentucky":
+			WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.scrolltoElement(driver, state.getLocator());
+			WebDriverUtils.clickOnElementWithWait(driver, state.getLocator());
+
+		case "New York":
+			WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.scrolltoElement(driver, state.getLocator());
+			WebDriverUtils.clickOnElementWithWait(driver, state.getLocator());
+
+		case "Texas":
+			WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.scrolltoElement(driver, state.getLocator());
+			WebDriverUtils.clickOnElementWithWait(driver, state.getLocator());
+		}
+
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, mobile, mobileValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -121,8 +168,6 @@ public class CheckoutProcessPage extends BasePage {
 			throw new RuntimeException("Language" + optionCountry + "not supported");
 		}
 	}
-	
-	
 
 	public void selectState() {
 		logger.info("Selecting state..");
@@ -131,20 +176,15 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, selectState);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
+
 	public void selectAddressUS() {
 		WebDriverUtils.clickOnElementWithWait(driver, arrowSelectAddress);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, addressOption);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
 
-	public void enterFName(String nameValue) {
-		logger.info("Entering first name..");
-		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-
+	
 	public void closeWindowAddress() {
 		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -155,51 +195,10 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void enterLName(String lastValue) {
-		logger.info("Entering last name..");
-		WebDriverUtils.enterTextBox(driver, lastName, lastValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterAddress(String addressValue) {
-		logger.info("Entering address address..");
-		WebDriverUtils.enterTextBox(driver, address, addressValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterAddress1(String addressValue1) {
-		logger.info("Entering address1 name..");
-		WebDriverUtils.enterTextBox(driver, address1, addressValue1);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterCity(String cityValue) {
-		logger.info("Entering city name..");
-		WebDriverUtils.enterTextBox(driver, city, cityValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterZipCode(String zipCodeValue) {
-		logger.info("Entering zip code..");
-		WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
 
 	public void checkBillingCheckBox() {
 		logger.info("Checking billing address the same..");
 		WebDriverUtils.clickOnElementWithWait(driver, checkCheckBoxBilling);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterMobile(String mobileValue) {
-		logger.info("Entering mobile phone..");
-		WebDriverUtils.enterTextBox(driver, mobile, mobileValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterEmail(String emailValue) {
-		logger.info("Entering email..");
-		WebDriverUtils.enterTextBox(driver, email, emailValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -288,4 +287,5 @@ public class CheckoutProcessPage extends BasePage {
 				ExpectedConditions.invisibilityOfElementLocated(checkoutCompleteText));
 		return new CheckoutProcessCompletePage(driver);
 	}
+
 }

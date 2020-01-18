@@ -44,7 +44,18 @@
             
                <class name="com.ariat.Tests.Checkout.CreateOrder.CustomerCreditCard.CheckoutCreateOrderCustomerCreditCardUSTest" />
                                                  
-               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardUSTest" />
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardCaliforniaUSTest" />
+               
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardHawaiiUSTest" />
+               
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardKentuckyUSTest" />
+               
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardNewYorkUSTest" />
+               
+               <class name="com.ariat.Tests.Checkout.CreateOrder.GuestCreditCard.CheckoutCreateOrderGuestCreditCardTexasUSTest" />
+                
+                
+
               
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
                  

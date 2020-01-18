@@ -66,7 +66,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			}
 			return new HomePageUS(driver);
-
+		
 		// Jenkins version
 		case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");

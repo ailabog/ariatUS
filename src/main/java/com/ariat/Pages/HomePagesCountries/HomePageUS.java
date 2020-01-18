@@ -459,6 +459,7 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 	
 	public BagsProductPage returnBagsProductPage() {
 		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, bagsCategory);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, garmentBagProduct);
