@@ -14,7 +14,9 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Product page - > Women Category -> Add to wishlist update, edit, set
@@ -38,16 +40,13 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru@yahoo.com";
-	public static final String PASSWORD_WISHLIST = "Parola12345!";
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
-
+	
 	@Test(priority = 0)
 	public void productPageWomenCategoryAddToWishListShareToAFriendTestUS() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & share it to a friend test...");
@@ -56,7 +55,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
 		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
@@ -72,7 +71,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
 		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
@@ -93,7 +92,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
 		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
@@ -111,7 +110,7 @@ public class OperationsWishListWomenCategoryUSTest extends BaseTest {
 	  homePage.load(environment.DEVELOPMENT.getURL()); homePageUK = (HomePageUK)
 	  homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 	  homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO()); signInPage = homePageUS.returnSignInPage();
-	  signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+	  signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
 	  signInPage.loginClick();
 	  bagsProductPage = homePageUS.returnBagsProductPage(); 
 	  myWishListPage = bagsProductPage.returnMyWishListPage();

@@ -1,6 +1,5 @@
 package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -17,8 +16,10 @@ import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Product page - > Women Category -> Add to Wishlist test
@@ -37,10 +38,10 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 	private MyWishListPage myWishListPage;
-    private BagsProductPage bagsProductPage;
+	private BagsProductPage bagsProductPage;
 	private MyAccountWishListPage myAccountWishListPage;
 	private CreateAccountPage createAccountPage;
-	
+
 	public static final String FIRST_NAME = GenerateRandomDataUtils.generateRandomString(5);
 	public static final String LAST_NAME = GenerateRandomDataUtils.generateRandomString(7);
 	public static final String BIRTH_MONTH = "March";
@@ -51,21 +52,17 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 
 	public static final String ORDER_NO = GenerateRandomDataUtils.generateRandomNumber(8);
 	public static final String BILLING_ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(6);
-	
+
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru@yahoo.com";
-	public static final String PASSWORD_WISHLIST = "Parola12345!";
-	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
+
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
-/*	@Test(priority=0)
+	@Test(priority = 0)
 	public void productPageWomenCategoryAddToWishListLoggedTestUS() {
 		logger.info("Starting product page -> Men Category Add to Wishlist being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -73,15 +70,16 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS",
+				CredentialsUtils.getProperty("password"));
 		signInPage.loginClick();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList being logged test.");
-		
-	} */
-	
- @Test(priority=1)
+
+	}
+
+	@Test(priority = 1)
 	public void productPageWomenCategoryAddToWishListNotLoggedTestUS() {
 		logger.info("Starting product page -> Men Category Add to Wishlist not being logged test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -91,13 +89,14 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myAccountWishListPage = bagsProductPage.returnMyAccountWishListPage();
-		signInPage.setLoginDetails(EMAIL_WISHLIST, "EnglishUS", PASSWORD_WISHLIST);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS",
+				CredentialsUtils.getProperty("password"));
 		signInPage.loginClick();
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList not being logged test.");
 	}
-	
-	@Test(priority=2)
+
+	@Test(priority = 2)
 	public void productPageWomenCategoryAddToWishListCreateAccountTestUS() {
 		logger.info("Starting product page -> Men Category Add to Wishlist create account test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -107,12 +106,13 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
-		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, EMAIL, PASSWORD, PASSWORD);
+		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, EMAIL, PASSWORD,
+				PASSWORD);
 		myAccountWishListPage = createAccountPage.returnMyAccountWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList create account test.");
 	}
-	
-	@Test(priority=3)
+
+	@Test(priority = 3)
 	public void productPageWomenCategoryFindSomeoneWishListTestUS() {
 		logger.info("Starting product page -> Men Category find someone's WishList test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -123,11 +123,11 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);
-		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
+		myAccountWishListPage.findWishListEmail(CredentialsUtils.getProperty("email_US"));
 		myAccountWishListPage.findWishListClick();
 		logger.info("Finishing product page -> Men Category find someone's WishList test.");
 	}
-	
+
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
@@ -136,8 +136,8 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		myAccountPage.quit();
 		bagsProductPage.quit();
 		myWishListPage.quit();
-	    createAccountPage.quit();
+		createAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

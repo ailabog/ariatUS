@@ -12,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 
 /**
@@ -29,12 +30,11 @@ public class MenCategoryPaginationSortingUSTest extends BaseTest {
 	private HomePageUK homePageUK;
 	private HomePageUS homePageUS;
 	private MenCategoryPage menCategoryPage;
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	
+	@BeforeTest
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test

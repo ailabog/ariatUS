@@ -17,8 +17,10 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.BagsProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Checkout -> Create new order customer credit cards US
@@ -49,19 +51,14 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	public static final String ZIP_CODE = "85007";
 	public static final String MOBILE = "(602) 364-2722";
 
-	public static final String EMAILEXISTENT = "aila.bogasieru@yahoo.com";
-	public static final String PASSWORDEXISTENT = "Parola12345!";
 	private ListOfCreditCards typeCard;
 
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
-
 
     @Test(priority = 0)
 	public void checkoutCreateNewOrderBeingLoggedMasterCardUS() {
@@ -71,7 +68,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUS", PASSWORDEXISTENT);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myBagPage = bagsProductPage.returnMyBagPage();
@@ -95,7 +92,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
    		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
    		signInPage = homePageUS.returnSignInPage();
-   		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUS", PASSWORDEXISTENT);
+   		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
    		myAccountPage = signInPage.returnMyAccountPage();
    		bagsProductPage = homePageUS.returnBagsProductPage();
    		myBagPage = bagsProductPage.returnMyBagPage();
@@ -119,7 +116,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
    		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
    		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
    		signInPage = homePageUS.returnSignInPage();
-   		signInPage.setLoginDetails(EMAILEXISTENT, "EnglishUS", PASSWORDEXISTENT);
+   		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
    		myAccountPage = signInPage.returnMyAccountPage();
    		bagsProductPage = homePageUS.returnBagsProductPage();
    		myBagPage = bagsProductPage.returnMyBagPage();

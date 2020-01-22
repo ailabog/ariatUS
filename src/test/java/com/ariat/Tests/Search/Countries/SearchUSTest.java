@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Search product United States test
@@ -29,12 +30,10 @@ public class SearchUSTest extends BaseTest {
 	private final String OPTION = "boots";
 	private final String MESSAGE = "Product results for: ";
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test
@@ -45,11 +44,11 @@ public class SearchUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		homePageUS.search(OPTION);
-	    homePageUS.assertProductDisplayed(MESSAGE+OPTION);
+		homePageUS.assertProductDisplayed(MESSAGE + OPTION);
 		homePageUS.seeAllproducts();
 		logger.info("Finishing search products US test");
 	}
-	
+
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
@@ -57,5 +56,5 @@ public class SearchUSTest extends BaseTest {
 		homePageUS.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

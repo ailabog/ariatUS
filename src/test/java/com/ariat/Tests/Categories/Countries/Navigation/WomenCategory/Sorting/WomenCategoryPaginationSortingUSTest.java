@@ -11,6 +11,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 
 
@@ -29,14 +30,13 @@ public class WomenCategoryPaginationSortingUSTest extends BaseTest {
 	private HomePageUK homePageUK;
 	private HomePageUS homePageUS;
 	private WomenCategoryPage womenCategoryPage;
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	
+	@BeforeTest
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
-
+	
 	@Test
 	public void navigateWomenCategoryUS() {
 		logger.info("Starting sort and navigate pagination test...");

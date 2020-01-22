@@ -13,7 +13,9 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Header.SignInPage;
 
 
@@ -36,17 +38,12 @@ public class DeleteCreditCardUSTest extends BaseTest{
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
 	
-	private static final String EMAIL = "aila.bogasieru@yahoo.com";
-	private static final String PASSWORD = "Parola12345!";
-	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
-
+	
 	@Test
 	public void deleteCreditCardFromPaymentInfoTestUS() {
 		logger.info("Starting delete credit card from Payment Info US test");
@@ -55,7 +52,7 @@ public class DeleteCreditCardUSTest extends BaseTest{
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUS", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email_US"), "EnglishUS", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
 	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");

@@ -12,6 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesBagsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
@@ -77,14 +78,12 @@ public class WomenCategoriesAndSubcategoriesTopNavUSTest extends BaseTest {
 	private WomenFeaturedHeritageCollectionPage womenFeaturedHeritageCollectionPage;
 	private WomenFeaturedWarmWeatherRidingPage womenFeaturedWarmWeatherRidingPage;
 	private WomenFeaturedTriFactorBreechPage womenFeaturedTriFactorBreechPage;
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	
+	@BeforeTest
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
-
 	@Test(priority = 0)
 	public void navigateWomenFootwearCategoriesUS() {
 		logger.info("Starting navigate Women Footwear sub-categories test...");
