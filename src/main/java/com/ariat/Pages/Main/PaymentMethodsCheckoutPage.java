@@ -152,8 +152,8 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	}
 
 	public void useAddressAsItIs() {
-		WebDriverUtils.clickOnElementWithWait(driver, useAddressAsItIsBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, useAddressAsItIsBtn);
 	}
 	
 	public void scroll1500DownSecurittCode() {

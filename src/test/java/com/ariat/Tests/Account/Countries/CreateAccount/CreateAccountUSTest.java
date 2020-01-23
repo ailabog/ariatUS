@@ -13,6 +13,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUS;
 import com.ariat.Pages.Main.CreateAccountPage;
 import com.ariat.Pages.Main.OrderDetailsPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
 import com.ariat.Utils.SetSelenium;
@@ -102,7 +103,7 @@ public class CreateAccountUSTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
-		signInPage.checkOrder("10002432", "aila.bogasieru@ariat.com", "35435");
+		signInPage.checkOrder("10002432", CredentialsUtils.getProperty("email_US"), "35435");
 		orderDetailsPage = signInPage.returnOrderDetailsPage();
 		logger.info("Finishing checking valid order test...");
 	}
@@ -116,7 +117,7 @@ public class CreateAccountUSTest extends BaseTest {
 		homePageUS = (HomePageUS) homePage.chooseEULocation(euCountry.USA, euCountry.USA.getCurrencyISO());
 		signInPage = homePageUS.returnSignInPage();
 		signInPage.forgotPasswordClick();
-		signInPage.forgotPasswordEmail(EMAIL);
+		signInPage.forgotPasswordEmail(CredentialsUtils.getProperty("email"));
 		signInPage.ForgotPasswordSend();
 		signInPage.closeForgotPassword();
 		logger.info("Finishing forgot password test...");

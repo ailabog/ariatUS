@@ -51,7 +51,9 @@ public class CheckoutProcessPage extends BasePage {
 	private By selectState = By.xpath("//span[text()='Arizona']");
 	private By checkoutBtn = By.xpath("//div[@data-funding-source='paypal']");
 	private By nextPaymentButton = By.cssSelector(".el-button > span > span");
-	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
+	//private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
+	private By useAddressAsItIsBtn = By.xpath("//button[@class='el-button checkout_button address-dialog_use-address-btn el-button--primary']");
+	
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
 	private By arrowSelectAddress = By.cssSelector(".el-icon-arrow-up");
