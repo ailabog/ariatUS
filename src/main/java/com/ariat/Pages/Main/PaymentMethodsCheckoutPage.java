@@ -1,5 +1,7 @@
 package com.ariat.Pages.Main;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -39,7 +41,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By selectState = By.xpath("//span[text()='Arizona']");
 	private By expirationDateMonthUS = By.cssSelector(".el-form-item:nth-child(4) .el-select__caret");
 	private By arrowExpYearUS = By.cssSelector(".el-form-item:nth-child(5) .el-select:nth-child(2) .el-select__caret");
-	
+		
 	
 	protected PaymentMethodsCheckoutPage(WebDriver driver) {
 		super(driver);
@@ -167,9 +169,8 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, placeOrderBtnUS);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-
-
-	public void clickBuyNow() {
+	
+		public void clickBuyNow() {
 		logger.info("Buying now..");
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);

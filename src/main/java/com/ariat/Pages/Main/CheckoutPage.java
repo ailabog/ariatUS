@@ -28,9 +28,8 @@ public class CheckoutPage extends BasePage {
 	private By increseQty = By.xpath("//i[@class='el-icon-plus']");
 	private By decreaseQty = By.xpath("//i[@class='el-icon-minus']");
 	private By promoCode = By.xpath("(//input[@type='text'])[4]");
-	private By applyPromoCode = By
-			.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
-	private By checkoutCheckoutBtn1 = By.cssSelector(".cart_button--black");
+	private By applyPromoCode = By.xpath("//section[@id='app']/main/div/div/div/div/div/div[3]/div/div/form/div[2]/div/button");
+	private By checkoutCheckoutBtn1 = By.xpath("//a[@href='/checkout']");
 	private By checkoutCheckoutBtn = By.xpath("//a[text()='Checkout']");
 	private By secureCheckoutBtn = By.xpath("//a[text()='Secure Checkout']");
 	private By returnPolicyBtn = By.xpath("//a[text()='Return Policies']");

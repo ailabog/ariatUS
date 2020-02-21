@@ -102,8 +102,8 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 	private By topsAndTshirtsCategory = By
 			.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[2]/li/ul/li[3]/a");
 	private By topsAndTshirtsText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By garmentBagProduct = By.cssSelector("#\\33 c79299b2a77de93250532b7fd .psd-4-full-width-video-module-1__image");
-	private By garmentText = By.xpath("//*contains[text()='Garment Bag']");
+	private By garmentBagProduct = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded' and @title='Ring Backpack']");
+	private By garmentText = By.xpath("//*contains[text()='Ring Backpack']");
 
 	public HomePageUS(WebDriver driver) {
 		super(driver);
@@ -462,6 +462,7 @@ public class HomePageUS extends BasePage implements List<HomePage> {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, bagsCategory);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scroll150(driver, garmentBagProduct);
 		WebDriverUtils.clickOnElementWithWait(driver, garmentBagProduct);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(garmentText));
