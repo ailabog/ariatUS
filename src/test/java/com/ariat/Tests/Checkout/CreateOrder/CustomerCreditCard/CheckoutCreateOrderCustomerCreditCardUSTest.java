@@ -50,7 +50,6 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 	public static final String STATE = "Arizona";
 	public static final String ZIP_CODE = "85007";
 	public static final String MOBILE = "(602) 364-2722";
-	public static final String TEXT = "Checkout Complete";
 
 	private ListOfCreditCards typeCard;
 
@@ -60,6 +59,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
+
 
     @Test(priority = 0)
 	public void checkoutCreateNewOrderBeingLoggedMasterCardUS() {
@@ -78,14 +78,13 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
-		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
+		paymentMethodsCheckoutPage.setSecurityCodePaymentMethodLogged(typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Master Card test.");
 	}
     
-   @Test(priority = 1)
+    @Test(priority = 1)
    	public void checkoutCreateNewOrderBeingLoggedVisaUS() {
    		logger.info("Starting checkout -> create new order being logged credit card Visa test...");
    		homePage = new HomePage(new ChromeDriver());
@@ -102,8 +101,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
-		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
+		paymentMethodsCheckoutPage.setSecurityCodePaymentMethodLogged(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
@@ -126,8 +124,7 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		checkoutProcessPage.selectAddressUS();
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.useAddressAsItIs();
-		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
-		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.AMERICAN_EXPRESS.getCvs());
+		paymentMethodsCheckoutPage.setSecurityCodePaymentMethodLogged(typeCard.AMERICAN_EXPRESS.getCvs());
 		paymentMethodsCheckoutPage.reviewOrderUS();
 		paymentMethodsCheckoutPage.placeOrderUS();
 		logger.info("Finishing checkout -> create new order without being logged credit card American Express test.");
@@ -146,5 +143,5 @@ public class CheckoutCreateOrderCustomerCreditCardUSTest extends BaseTest {
 		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

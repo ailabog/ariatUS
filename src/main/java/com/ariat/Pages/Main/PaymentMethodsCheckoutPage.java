@@ -68,6 +68,12 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
 	}
+	
+	public void setSecurityCodePaymentMethodLogged(String securityCardValue) {
+		WebDriverUtils.scroll1500Down(driver, securityCode);
+		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	}
 
 	public void pressPaymentMethods(String optionMethod) {
 		switch (optionMethod) {
