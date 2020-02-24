@@ -66,6 +66,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 			}
 			return new HomePageUS(driver);
+	
 
 	// Jenkins version
 		case "(United Kingdom)":
@@ -85,7 +86,7 @@ public class HomePage extends BasePage implements List<HomePage> {
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 			}
 			return new HomePageUK(driver);
-	
+		
 		default:
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}

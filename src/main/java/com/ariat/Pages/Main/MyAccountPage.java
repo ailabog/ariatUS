@@ -26,13 +26,13 @@ public class MyAccountPage extends BasePage {
 
 	private By logout = By.xpath("//a[text()='Log out']");
 	private By signIn = By.xpath("//a[text()= 'Sign In']");
-	private By personalInfoLink = By.xpath("//a[text()= 'Personal Information']");
+	private By personalInfoLink = By.xpath("//a[text()='Personal Information']");
 	private By personalInfoText = By.xpath("//*[contains(text(),'Personal Information']");
 	private By emailPreferencesText = By.xpath("//*[contains(text(), 'Email Preferences']");
 	private By emailPreferencesLink = By.xpath("//a[@title='Show or update your email preference']");
 	private By addressesText = By.xpath("//*[contains(text(), 'Addresses']");
 	private By addressesLink = By.xpath("//a[text()='Addresses']");
-	private By paymentInformationLink = By.xpath("//a[text()='Payment information']");
+	private By paymentInformationLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[5]/a");
 	private By paymentInformationText = By.className("//*contains[text(),'Credit card information']");
 	private By myOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[6]/a");
 	private By noOrdersText = By.className("//*contains[text(), We have no order records for this account.']");
@@ -42,7 +42,7 @@ public class MyAccountPage extends BasePage {
 	private By orderDetailsText = By.xpath("//*contains[text(),'Order details']");
 	private By myWishListLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/div/ul/li[7]/a");
 	private By myWishListText = By.xpath("//*contains[text(), 'Wish list']");
-	private By myAccountLink = By.xpath("//a[@class='upper-link last ms_desktop-only user-account']");
+	private By myAccountLink = By.xpath("//a[text()='My account']");
 	private By editPersonalInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[1]/a");
 	private By changePasswordLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[1]/div[3]/a");
 	private By editEmailPreferenceLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[2]/div[1]/a");
@@ -51,9 +51,9 @@ public class MyAccountPage extends BasePage {
 	private By addressLinkUS = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/a");
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//a[text()='Add Card']");
-	private By viewAllOrdersLink = By.cssSelector("(.myaccount-container__my-orders .myaccount-container__box-link");
+	private By viewAllOrdersLink = By.cssSelector(".myaccount-container__my-orders .myaccount-container__box-link");
 	private By viewAllOrdersLinkUS = By.xpath("//a[contains(text(),'View All')]");
-	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[59]");
+	private By viewAllWishListLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[6]/div[1]/a");
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
 	private By myEmailPrefText = By.xpath("//*[contains(text(),'Email preferences']");
@@ -74,6 +74,7 @@ public class MyAccountPage extends BasePage {
 	private By orderDetailsMyAccountLink = By
 			.xpath("//div[@id='main']/div/div[2]/div/div/div/div[2]/div[5]/div[2]/div/div[4]/a[2]");
 	private By womenText = By.xpath("//*contains(text(),'Women']");
+	
 
 	public void logoutMiddle() {
 		logger.info("Logging out from the application:");

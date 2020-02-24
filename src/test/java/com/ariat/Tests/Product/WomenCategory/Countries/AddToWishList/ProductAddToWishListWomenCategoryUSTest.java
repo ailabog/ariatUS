@@ -106,8 +106,7 @@ public class ProductAddToWishListWomenCategoryUSTest extends BaseTest {
 		bagsProductPage = homePageUS.returnBagsProductPage();
 		myWishListPage = bagsProductPage.returnMyWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
-		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, EMAIL, PASSWORD,
-				PASSWORD);
+		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, CredentialsUtils.getProperty("email_US"), CredentialsUtils.getProperty("email"), CredentialsUtils.getProperty("password"), CredentialsUtils.getProperty("password"));
 		myAccountWishListPage = createAccountPage.returnMyAccountWishListPage();
 		logger.info("Finishing product page -> Men Category Add to WishList create account test.");
 	}
